@@ -1,0 +1,121 @@
+// .section-banner {
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   height: 592px;
+// }
+// .features-banner {
+//   background-image: url("/images/features/features-banner.png");
+//   background-position: center right;
+// }
+// .jobs-banner {
+//   background-image: url("/images/features/jobs.png");
+//   background-position: center left;
+// }
+// .leads-banner {
+//   background-image: url("/images/features/leads.png");
+//   background-position: center right;
+// }
+// .timecard-banner {
+//   background-image: url("/images/features/timecard.png");
+//   background-position: center left;
+// }
+// .calendar-banner {
+//   background-image: url("/images/features/calendar.png");
+//   background-position: center right;
+// }
+// .notepad-banner {
+//   background-image: url("/images/features/notepad.png");
+//   background-position: center left;
+// }
+::ng-deep .p-button {
+  .btn-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.primary-outlined {
+    border-radius: 9px;
+    border: 2px solid #276ca6;
+    background: var(--surface-0);
+    color: #276ca6;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 16px 12px 24px;
+    gap: 12px;
+    .btn-icon {
+      background: rgba(39, 108, 166, 0.2);
+    }
+  }
+  &.primary-btn {
+    border-radius: 9px;
+    border: 2px solid #276ca6;
+    background: #276ca6;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 16px 12px 24px;
+    gap: 12px;
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+.seejobrun-list {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0;
+  li {
+    position: relative;
+    padding-left: 20px; /* Space for the arrow */
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 143%;
+    letter-spacing: -0.16px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-image: url("/images/arrow-right.svg"); /* Use your image path */
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.seejobrun-list-white {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0;
+  li {
+    position: relative;
+    padding-left: 60px; /* Space for the arrow */
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 143%;
+    letter-spacing: -0.18px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-image: url("/images/check-white.svg"); /* Use your image path */
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

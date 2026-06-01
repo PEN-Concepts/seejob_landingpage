@@ -1,0 +1,166 @@
+// .home-banner {
+//   background-image: url("/images/home/banner-layer.png");
+//   background-position: center right;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   height: 520px;
+// }
+.banner-subtext {
+  background: linear-gradient(
+    135deg,
+    rgba(39, 108, 166, 0.1),
+    rgba(39, 108, 166, 0.05)
+  );
+  color: #164a72;
+  padding: 32px 24px;
+}
+// .jmg-banner {
+//   background-image: url("/images/home/demo-image.png");
+//   background-position: center left;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   height: 592px;
+// }
+// .play-video {
+//   background-image: url("/images/home/play-video.png");
+//   background-position: center left;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   height: 592px;
+// }
+::ng-deep .p-button {
+  .btn-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.primary-outlined {
+    border-radius: 9px;
+    border: 2px solid #276ca6;
+    background: var(--surface-0);
+    color: #276ca6;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 16px 12px 24px;
+    gap: 12px;
+    .btn-icon {
+      background: rgba(39, 108, 166, 0.2);
+    }
+  }
+  &.primary-btn {
+    border-radius: 9px;
+    border: 2px solid #276ca6;
+    background: #276ca6;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 16px 12px 24px;
+    gap: 12px;
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .banner-subtext {
+    background: transparent;
+    color: #ffffff;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+.seejobrun-list {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0;
+  li {
+    position: relative;
+    padding-left: 20px; /* Space for the arrow */
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 143%;
+    letter-spacing: -0.16px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-image: url("/images/arrow-right.svg"); /* Use your image path */
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home-banner,
+  .jmg-banner,
+  .play-video {
+    background-image: none;
+    height: auto;
+  }
+  ::ng-deep .p-button {
+    .btn-icon {
+      width: 30px;
+      height: 30px;
+    }
+    &.primary-outlined {
+      font-size: 14px;
+      padding: 10px 12px 10px 18px;
+      gap: 8px;
+    }
+    &.primary-btn {
+      font-size: 14px;
+      padding: 10px 12px 10px 18px;
+      gap: 8px;
+    }
+  }
+  .seejobrun-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    li {
+      position: relative;
+      font-size: 14px;
+      &::before {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  ::ng-deep .p-button {
+    &.primary-outlined {
+      background: rgba(15, 23, 42, 0.55);
+      border-color: rgba(39, 108, 166, 0.55);
+      color: #f8fafc;
+      box-shadow: 0 12px 26px rgba(8, 17, 32, 0.35);
+
+      .btn-icon {
+        background: rgba(39, 108, 166, 0.45);
+      }
+
+      &:hover {
+        background: rgba(39, 108, 166, 0.7);
+        border-color: #5aa9e6;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .banner-subtext {
+    background: rgba(9, 16, 29, 0.9);
+    color: #e5f0ff;
+    padding: 28px 24px;
+  }
+}

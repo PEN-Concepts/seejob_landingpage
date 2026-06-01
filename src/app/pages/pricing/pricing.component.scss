@@ -1,0 +1,259 @@
+// ─── Pricing Section ─────────────────────────────────────────
+.pricing-section {
+  background: #f8f9fb;
+}
+
+// ─── Grid Layout ─────────────────────────────────────────────
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: stretch;
+  padding-top: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+}
+
+// ─── Plan Card ───────────────────────────────────────────────
+.plan-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e6ed;
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: #cdd3de;
+  }
+
+  // ── Popular variant (Gold) ──
+  &--popular {
+    border-color: #e8c500;
+    box-shadow: 0 4px 20px rgba(232, 197, 0, 0.12);
+
+    &:hover {
+      box-shadow: 0 8px 30px rgba(232, 197, 0, 0.18);
+      border-color: #d4b400;
+    }
+  }
+
+  // ── Highlight variant (Platinum) ──
+  &--highlight {
+    border-color: #276ca6;
+    box-shadow: 0 4px 20px rgba(39, 108, 166, 0.1);
+
+    &:hover {
+      box-shadow: 0 8px 30px rgba(39, 108, 166, 0.16);
+      border-color: #1f5a8c;
+    }
+  }
+}
+
+// ─── Badge ───────────────────────────────────────────────────
+.plan-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 999px;
+  color: #184074;
+  background: linear-gradient(138deg, #fce597 0%, #f7c66b 100%);
+  box-shadow: 0 4px 12px rgba(210, 166, 44, 0.25);
+
+  &--blue {
+    color: #ffffff;
+    background: linear-gradient(135deg, #276ca6 0%, #1f4f7a 100%);
+    box-shadow: 0 4px 12px rgba(39, 108, 166, 0.3);
+  }
+}
+
+// ─── Plan Header ─────────────────────────────────────────────
+.plan-header {
+  min-height: 48px;
+  margin-bottom: 20px;
+}
+
+.plan-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.plan-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0 0;
+  font-weight: 500;
+}
+
+// ─── Price Section ───────────────────────────────────────────
+.plan-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+
+.plan-price {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1a1f36;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.plan-price-period {
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+// ─── Actions ─────────────────────────────────────────────────
+.plan-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.plan-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-sizing: border-box;
+
+  &--primary {
+    background: #1a1f36;
+    color: #ffffff;
+    border: 1px solid #1a1f36;
+
+    &:hover {
+      background: #2d3452;
+      border-color: #2d3452;
+      box-shadow: 0 4px 14px rgba(26, 31, 54, 0.25);
+    }
+  }
+
+  &--outline {
+    background: #ffffff;
+    color: #1a1f36;
+    border: 1px solid #d1d5db;
+
+    &:hover {
+      background: #f3f4f6;
+      border-color: #9ca3af;
+    }
+  }
+
+  &--gold {
+    background: #c08e1b;
+    color: #ffffff;
+    border: 1px solid rgba(210, 166, 44, 0.5);
+    font-weight: 700;
+
+    &:hover {
+      background: #dca92d;
+      box-shadow: 0 4px 14px rgba(210, 166, 44, 0.35);
+    }
+  }
+}
+
+// ─── Features Divider ────────────────────────────────────────
+.plan-features-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin-bottom: 20px;
+}
+
+// ─── Features List ───────────────────────────────────────────
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+
+  li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #374151;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2322c55e'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &.disabled {
+      color: #b0b7c3;
+
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23d1d5db'%3E%3Cpath fill-rule='evenodd' d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      }
+    }
+  }
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (max-width: 639px) {
+  .plan-card {
+    padding: 28px 20px;
+  }
+
+  .plan-badge {
+    top: -11px;
+    font-size: 11px;
+    padding: 4px 14px;
+  }
+
+  .plan-price {
+    font-size: 34px;
+  }
+}

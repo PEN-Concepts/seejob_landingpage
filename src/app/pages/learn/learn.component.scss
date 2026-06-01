@@ -1,0 +1,40 @@
+::ng-deep .p-button {
+  .btn-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.primary-outlined {
+    border-radius: 9px;
+    border: 2px solid #276ca6;
+    background: var(--surface-0);
+    color: #276ca6;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 16px 12px 24px;
+    gap: 12px;
+    .btn-icon {
+      background: rgba(39, 108, 166, 0.2);
+    }
+  }
+  &.primary-btn {
+    border-radius: 9px;
+    border: 2px solid #276ca6;
+    background: #276ca6;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 16px 12px 24px;
+    gap: 12px;
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<header>
+  <div class="container mx-auto py-4 px-4 md:px-0">
+    <div class="flex justify-between gap-2 items-center flex-col md:flex-row">
+      <div class="flex flex-1 items-center">
+        <div class="flex justify-between flex-1">
+          <p-menubar [model]="items" class="w-full">
+            <ng-template #start>
+              <a href="/">
+                <img src="images/seejobrun-logo.png" />
+              </a>
+            </ng-template>
+            <ng-template #item let-item let-root="root">
+              <a
+                pRipple
+                [routerLink]="item.routerLink"
+                routerLinkActive="menu-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="flex items-center p-menubar-item-link px-3 py-2"
+              >
+                <span>{{ item.label }}</span>
+
+                <i
+                  *ngIf="item.items"
+                  [ngClass]="[
+                    'ml-auto pi',
+                    root ? 'pi-angle-down' : 'pi-angle-right'
+                  ]"
+                ></i>
+              </a>
+            </ng-template>
+          </p-menubar>
+        </div>
+      </div>
+      <div class="flex items-center gap-5">
+        <img src="images/globe.png" />
+        <a
+          href="https://seejobrun.com/user-dashboard/"
+          pButton
+          target="_blank"
+          rel="noopener noreferrer"
+          severity="secondary"
+        >
+          <span pButtonLabel>Sign In</span>
+        </a>
+        <a
+          href="https://seejobrun.com/user-dashboard/signup"
+          pButton
+          target="_blank"
+          rel="noopener noreferrer"
+          severity="info"
+        >
+          <span pButtonLabel>Sign Up</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,75 @@
+@use "primeicons/primeicons.css";
+@use "tailwindcss";
+@plugin "tailwindcss-primeui";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary: #276ca6;
+  --color-secondary: #49af31;
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --body-color: #3c3c3c;
+}
+:root {
+  --p-button-primary-background: #276ca6;
+  --p-button-primary-border-color: #276ca6;
+  --p-button-primary-text-color: #ffffff;
+  --p-button-secondary-background: #49af31;
+  --p-button-secondary-border-color: #49af31;
+  --p-button-secondary-color: #fff;
+  --bg-body: #ffffff;
+  --surface-0: #ffffff;
+  --surface-1: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.06);
+  --text-color: #3c3c3c;
+  --menu-text: var(--text-color);
+  --footer-bg: rgba(213, 231, 243, 0.3);
+  color-scheme: light dark;
+}
+body {
+  font-family: var(--font-inter);
+  color: var(--text-color);
+  background-color: var(--bg-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #0f172a;
+    --surface-0: #111827;
+    --surface-1: #1f2937;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-color: #e5e7eb;
+    --menu-text: var(--text-color);
+    --footer-bg: rgba(39, 108, 166, 0.15);
+  }
+  .bg-white {
+    background-color: var(--surface-1) !important;
+    border: 1px solid var(--card-border) !important;
+  }
+  .bg-\[\#E9F2F9\] {
+    background-color: var(--surface-1) !important;
+    border: 1px solid var(--card-border) !important;
+  }
+  .bg-\[rgba\(213\,231\,243\,0\.52\)\] {
+    background-color: var(--surface-1) !important;
+    border: 1px solid var(--card-border) !important;
+  }
+  .bg-\[rgba\(213\,231\,243\,0\.5\)\] {
+    background-color: var(--surface-1) !important;
+    border: 1px solid var(--card-border) !important;
+  }
+  .bg-\[\#D9D9D9\] {
+    background-color: #374151 !important;
+  }
+  .bg-\[\#D9D9D9\].border-white {
+    border-color: rgba(255, 255, 255, 0.35) !important;
+  }
+}

@@ -1,0 +1,44 @@
+::ng-deep .p-menubar {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  .p-menubar-root-list {
+    gap: 30px;
+    flex: 1;
+    justify-content: end;
+  }
+  .p-menubar-item-link {
+    color: var(--menu-text);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    &.menu-active {
+      border-bottom: 3px solid #276ca6;
+    }
+  }
+}
+header {
+  box-shadow: 0 0 18px rgba(39, 108, 166, 0.08);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: var(--surface-0);
+  backdrop-filter: blur(6px);
+  .w-full {
+    box-shadow: none;
+  }
+}
+@media (max-width: 1200px) {
+  ::ng-deep .p-menubar {
+    .p-menubar-root-list {
+      gap: 2px;
+    }
+    .p-menubar-item-link {
+      font-size: 15px;
+      &.menu-active {
+        border-bottom: 1px solid #276ca6;
+      }
+    }
+  }
+}

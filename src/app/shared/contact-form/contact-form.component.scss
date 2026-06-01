@@ -1,0 +1,11 @@
+// Form validation styles - only target input elements
+::ng-deep input.ng-invalid.ng-dirty,
+::ng-deep textarea.ng-invalid.ng-dirty {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2) !important;
+}
+
+::ng-deep .p-message {
+  margin-top: 4px;
+  font-size: 14px;
+}
