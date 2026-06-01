@@ -20,7 +20,6 @@ export class FeaturesComponent {
   }
 
   onDemoSubmit(formData: any) {
-    console.log('Demo form submitted:', formData);
     // Handle demo form submission here
   }
 }

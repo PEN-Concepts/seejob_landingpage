@@ -10,7 +10,6 @@ import {
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
-import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
@@ -25,7 +24,6 @@ import { environment } from '../../../environments/environment';
     ButtonModule,
     InputTextModule,
     TextareaModule,
-    CardModule,
     ReactiveFormsModule,
     MessageModule,
     ToastModule,
@@ -38,7 +36,6 @@ export class ContactComponent {
   contactForm: FormGroup;   
   loading = false;
   private apiUrl = environment.apiUrl + '/contact';
-   //private apiUrl = 'https://userback.seejobrun.com/api/v1/admin_contact/contact';
   constructor(private fb: FormBuilder,
     private http: HttpClient,
     private messageService: MessageService,
@@ -58,16 +55,6 @@ export class ContactComponent {
       message: ['', [Validators.required]],
     });
   }
-
-  // onSubmit() {
-  //   if (this.contactForm.valid) {
-  //     console.log('Form submitted:', this.contactForm.value);
-  //     // Handle form submission here
-  //   } else {
-  //     console.log('Form is invalid');
-  //     this.contactForm.markAllAsTouched();
-  //   }
-  // }
 
   onSubmit() {
   if (this.contactForm.invalid) {
@@ -96,7 +83,6 @@ export class ContactComponent {
         detail: 'Failed to send Contact Request',
         life: 5000,
       });
-      console.error(err);
     },
   });
 }

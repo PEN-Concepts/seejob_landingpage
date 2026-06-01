@@ -15,8 +15,6 @@ import { MessageModule } from 'primeng/message';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { RouterModule } from '@angular/router';
-
 import { ButtonModule } from 'primeng/button';
 import { ContactFormComponent } from '../../shared/contact-form/contact-form.component';
 import { environment } from '../../../environments/environment';
@@ -42,7 +40,6 @@ import { environment } from '../../../environments/environment';
 export class HomeComponent {
   demoDialogVisible: boolean = false;
   contactForm: FormGroup;   
-  //private apiUrl = 'http://localhost:8000/api/v1/admin_contact/demo_request';
   private apiUrl =  environment.apiUrl + '/demo_request';
   constructor(private fb: FormBuilder,
     private http: HttpClient,
@@ -106,9 +103,8 @@ export class HomeComponent {
         detail: 'Failed to Demo request',
         life: 5000,
       });
-      console.error(err);
     },
   });
 }
-    
+
 }

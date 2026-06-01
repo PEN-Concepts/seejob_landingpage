@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
@@ -15,7 +15,7 @@ import { MenubarModule } from 'primeng/menubar';
 export class HeaderComponent implements OnInit {
   items: MenuItem[] | undefined;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {
     this.items = [
