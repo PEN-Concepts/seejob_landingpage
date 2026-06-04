@@ -14,6 +14,7 @@ import { MessageModule } from 'primeng/message';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { CardModule } from 'primeng/card';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -27,6 +28,7 @@ import { environment } from '../../../environments/environment';
     ReactiveFormsModule,
     MessageModule,
     ToastModule,
+    CardModule,
   ],
   providers: [MessageService],
   templateUrl: './contact.component.html',
