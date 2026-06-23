@@ -31,19 +31,25 @@
       </div>
     </div>
 
-    <div class="w-full lg:w-1/2">
-      <video
-        class="w-full rounded-2xl shadow-2xl lg:ml-auto mt-12 lg:mt-0"
-        autoplay
-        muted
-        loop
-        playsinline
-        controls
-        preload="metadata"
-        poster="videos/promo-poster.png"
-      >
-        <source src="videos/seejobrun-promo.mp4" type="video/mp4" />
-      </video>
+    <div class="w-full lg:ml-auto mt-12 lg:mt-0">
+      <div class="fx">
+        <div class="fx-bar"><i></i><i></i><i></i><span class="fx-word">See Job Run</span></div>
+        <div class="fx-body">
+          <div class="fx-top"><div class="fx-h">Riverside ADU</div><div class="fx-ring"><span>67%</span></div></div>
+          <div class="fx-week">
+            <div class="fx-col"><div class="fx-day">Mon</div><span class="fx-chip fx-c1">Pour footings</span></div>
+            <div class="fx-col"><div class="fx-day">Tue</div><span class="fx-chip r fx-c2">Demo &amp; grade</span></div>
+            <div class="fx-col"><div class="fx-day">Wed</div><span class="fx-chip fx-c3">Set forms</span></div>
+            <div class="fx-col"><div class="fx-day">Thu</div><span class="fx-chip fx-c4">Handrail</span></div>
+            <div class="fx-col"><div class="fx-day">Fri</div></div>
+            <div class="fx-col"><div class="fx-day">Sat</div></div>
+            <div class="fx-col"><div class="fx-day">Sun</div></div>
+          </div>
+          <div class="fx-task fx-t1"><span class="fx-ck"></span><span class="fx-tx">Pour footings &amp; set forms</span><span class="fx-pill">Crew A</span><span class="fx-pbar"><i></i></span></div>
+          <div class="fx-task fx-t2"><span class="fx-ck"></span><span class="fx-tx">Frame walls — north side</span><span class="fx-pill">Crew B</span><span class="fx-pbar"><i></i></span></div>
+          <div class="fx-task fx-t3"><span class="fx-ck"></span><span class="fx-tx">Rough electrical inspection</span><span class="fx-pill">Crew A</span><span class="fx-pbar"><i></i></span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -73,7 +79,7 @@
       <div
         class="flex flex-col gap-5 items-center bg-white rounded-2xl hover:shadow-[0_4px_30.5px_0_rgba(0,0,0,0.40)] px-5 py-10 text-center"
       >
-        <img src="images/home/briefcase.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/briefcase.png);mask-image:url(images/home/briefcase.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold capitalize"
         >
@@ -87,21 +93,21 @@
       <div
         class="flex flex-col gap-5 items-center bg-white rounded-2xl hover:shadow-[0_4px_30.5px_0_rgba(0,0,0,0.40)] px-5 py-10 text-center"
       >
-        <img src="images/home/time-record.png" />
+        <i class="pi pi-shield ftr-pi"></i>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold capitalize"
         >
-          Time Card
+          Spartan Dashboard
         </div>
         <div class="text-sm lg:text-base">
-          Simplified time tracking log hours, breaks, and shifts,automatically
-          synced for payroll & reporting.
+          Command your day — goals, daily tasks, and your schedule in one
+          focused view that keeps you on mission.
         </div>
       </div>
       <div
         class="flex flex-col gap-5 items-center bg-white rounded-2xl hover:shadow-[0_4px_30.5px_0_rgba(0,0,0,0.40)] px-5 py-10 text-center"
       >
-        <img src="images/home/job-safety.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/job-safety.png);mask-image:url(images/home/job-safety.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold capitalize"
         >
@@ -115,7 +121,7 @@
       <div
         class="flex flex-col gap-5 items-center bg-white rounded-2xl hover:shadow-[0_4px_30.5px_0_rgba(0,0,0,0.40)] px-5 py-10 text-center"
       >
-        <img src="images/home/task-management.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/task-management.png);mask-image:url(images/home/task-management.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold capitalize"
         >
@@ -129,7 +135,7 @@
       <div
         class="flex flex-col gap-5 items-center bg-white rounded-2xl hover:shadow-[0_4px_30.5px_0_rgba(0,0,0,0.40)] px-5 py-10 text-center"
       >
-        <img src="images/home/calendar.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/calendar.png);mask-image:url(images/home/calendar.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold capitalize"
         >
@@ -143,7 +149,7 @@
       <div
         class="flex flex-col gap-5 items-center bg-white rounded-2xl hover:shadow-[0_4px_30.5px_0_rgba(0,0,0,0.40)] px-5 py-10 text-center"
       >
-        <img src="images/home/team-management.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/team-management.png);mask-image:url(images/home/team-management.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold capitalize"
         >
@@ -168,6 +174,45 @@
     </div>
   </div>
 </section>
+
+<!-- ===== Full-width "See it in action" video band ===== -->
+<section class="my-14 lg:my-20">
+  <div class="text-center text-2xl lg:text-4xl font-semibold mb-3">See it in action</div>
+  <div class="text-center text-sm lg:text-base text-[#9aa6b2] mb-8 px-4">
+    Watch See Job Run run a job from start to finish — in 30 seconds.
+  </div>
+  <div class="relative w-full max-w-[1200px] mx-auto px-4">
+    <video
+      #promoVid
+      class="w-full rounded-2xl shadow-2xl block"
+      playsinline
+      controls
+      preload="metadata"
+      poster="videos/promo-poster.png"
+      (play)="0"
+      (pause)="0"
+    >
+      <source src="videos/seejobrun-promo.mp4" type="video/mp4" />
+    </video>
+    @if (promoVid.paused) {
+      <button
+        type="button"
+        (click)="promoVid.play()"
+        aria-label="Play video"
+        class="absolute inset-0 flex items-center justify-center cursor-pointer bg-black/20 rounded-2xl group mx-4"
+        style="width:calc(100% - 2rem)"
+      >
+        <span
+          class="flex items-center justify-center w-24 h-24 rounded-full shadow-xl transition-transform group-hover:scale-110"
+          style="background:#e8b82a;color:#14181d"
+        >
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+        </span>
+      </button>
+    }
+  </div>
+</section>
+
 <img src="images/home/section-curve.svg" class="w-full" />
 <section>
   <div class="container mx-auto px-4 md:px-0">
@@ -181,7 +226,7 @@
       <div
         class="flex flex-col gap-6 items-center text-center rounded-2xl bg-[#E9F2F9] px-[30px] py-[40px]"
       >
-        <img src="images/home/reports.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/reports.png);mask-image:url(images/home/reports.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold tracking-[-0.24px]"
         >
@@ -195,7 +240,7 @@
       <div
         class="flex flex-col gap-6 items-center text-center rounded-2xl bg-[#E9F2F9] px-[30px] py-[40px]"
       >
-        <img src="images/home/scheduling.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/scheduling.png);mask-image:url(images/home/scheduling.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold tracking-[-0.24px]"
         >
@@ -210,7 +255,7 @@
       <div
         class="flex flex-col gap-6 items-center text-center rounded-2xl bg-[#E9F2F9] px-[30px] py-[40px]"
       >
-        <img src="images/home/operations.png" />
+        <span class="ftr-icon" style="-webkit-mask-image:url(images/home/operations.png);mask-image:url(images/home/operations.png)"></span>
         <div
           class="text-lg lg:text-2xl leading-[1.2] font-bold lg:font-semibold tracking-[-0.24px]"
         >
@@ -233,12 +278,8 @@
   <div
     class="container mx-auto px-4 md:px-0 flex flex-col lg:flex-row items-center gap-2 h-full"
   >
-    <div class="w-full lg:w-1/2">
-      <img
-        src="images/home/demo-image.png"
-        alt="Devices"
-        class="lg:mr-auto mt-12 lg:mt-0"
-      />
+    <div class="w-full lg:w-1/2 lg:mr-auto mt-12 lg:mt-0">
+      <img src="images/screens/pic-track.png" alt="Track everything with See Job Run" class="rounded-2xl w-full shadow-2xl" />
     </div>
 
     <div class="w-full lg:w-1/2">
@@ -297,7 +338,7 @@
         </ul>
       </div>
       <div class="w-full lg:w-1/2 flex justify-end">
-        <img src="images/home/cashflow-mg.jpg" />
+        <img src="images/screens/pic-life.png" alt="Run your day in See Job Run" class="rounded-2xl w-full shadow-2xl" />
       </div>
     </div>
   </div>
@@ -307,13 +348,13 @@
   <div class="container mx-auto px-4 md:px-0 mt-10 lg:mt-16">
     <div class="flex flex-col lg:flex-row items-center gap-[38px]">
       <div class="w-full lg:w-1/2">
-        <img src="images/home/workers.jpg" />
+        <img src="images/screens/pic-devices.png" alt="See Job Run on every device" class="rounded-2xl w-full shadow-2xl" />
       </div>
       <div class="w-full lg:w-1/2">
         <div
           class="text-primary text-base lg:text-3xl leading-[1.3] tracking-[-0.3px] text-center lg:text-left"
         >
-          Start with just $75 for 75 contacts
+          Start with just $25 a month
         </div>
         <div
           class="text-sm lg:text-base mt-[52px] mb-[46px] leading-[1.5] tracking-[-0.16px]"
@@ -323,7 +364,7 @@
         </div>
 
         <ul class="seejobrun-list">
-          <li>Upgrade anytime as your contact list grows</li>
+          <li>Unlimited contacts — no caps, ever</li>
           <li>Simple, intuitive, and easy to use</li>
           <li>Seamless onboarding with setup support</li>
           <li>Reliable customer service when you need it</li>
@@ -355,9 +396,9 @@
     <div class="flex flex-col lg:flex-row items-center gap-2">
       <div class="w-full lg:w-1/2">
         <img
-          src="images/home/play-video.png"
-          alt="Devices"
-          class="lg:mr-auto mt-12 lg:mt-0"
+          src="images/screens/pic-cta.png"
+          alt="Start at $25 a month with See Job Run"
+          class="lg:mr-auto mt-12 lg:mt-0 rounded-2xl w-full shadow-2xl"
         />
       </div>
 
@@ -382,6 +423,149 @@
           Oak Coast Construction INC.
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section>
+  <div class="container mx-auto px-4 md:px-0 my-12 lg:my-20">
+    <div class="text-center text-2xl lg:text-4xl font-semibold mb-3">
+      What people are saying
+    </div>
+    <div class="text-center text-sm lg:text-base text-[#9aa6b2] mb-10">
+      App Store reviews of See Job Run — and clients of the team behind it.
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">Bo</span>
+          <div><div class="font-semibold">Bobshmegal</div><div class="text-primary text-sm">★★★★★</div></div>
+          <span class="ml-auto text-[10px] uppercase tracking-wide text-[#9aa6b2] border border-[rgba(232,184,42,0.3)] rounded px-2 py-1">App Store</span>
+        </div>
+        <div class="font-semibold text-primary">Great app for contractors and project managers</div>
+        <p class="text-sm leading-[1.6] italic">"The app is laid out well, easy to navigate, and has lots of features that make running any project a breeze. Contractors and project managers are able to share tasks with the specific people needed, and clients are able to keep track of the job progress at any time. English and Spanish is a huge plus, allowing each user to select their preference and have everything translate seamlessly!"</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">September 27, 2023</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">Mi</span>
+          <div><div class="font-semibold">mickeylover28</div><div class="text-primary text-sm">★★★★★</div></div>
+          <span class="ml-auto text-[10px] uppercase tracking-wide text-[#9aa6b2] border border-[rgba(232,184,42,0.3)] rounded px-2 py-1">App Store</span>
+        </div>
+        <div class="font-semibold text-primary">See Job Run gets it done!</div>
+        <p class="text-sm leading-[1.6] italic">"This app is a one-stop-shop for keeping your projects organized and on track. It is easy to use and is a great help for communicating with subs and anyone else who is involved with the job. Well worth the small fee because of the time and materials saved."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">September 27, 2023</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">KP</span>
+          <div><div class="font-semibold">Kim Phillips</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"Just finished a bedroom remodel with some extra touch ups around my house. Poul and his crew did a great job and were easy to work with. I highly recommend Oak Coast Construction, Inc."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">January 13, 2023</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">SM</span>
+          <div><div class="font-semibold">Steven Mamigonian</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"I have had many contractors over the years, but by far, none has compared to Poul Norholm and his company. The work he did was excellent, clean, and top-notch. I will recommend Norholm Builders to everyone. In fact, he is already planning the next job for me, and will do all of my future work. 5++ Stars!!!"</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">December 17, 2018</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">BJ</span>
+          <div><div class="font-semibold">Bryan Johnston</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"We live in a small house with 2 children under 3 and operate 2 separate businesses from home. Something had to be done and we decided to convert the garage to a combined office space."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">December 17, 2018</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">RW</span>
+          <div><div class="font-semibold">Richard Wenz</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"Poul is great to work with, honest, trustworthy and clean. :) I have worked for Poul for around 15 years and I have never been disappointed."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">April 25, 2018</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">TK</span>
+          <div><div class="font-semibold">Tom Kosta</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"Poul and his team did a fantastic job on our remodel. They completed the job on time and on budget. I am looking forward to the next project with them."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">April 25, 2018</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">BS</span>
+          <div><div class="font-semibold">Beau Sisemore</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"I've worked with many contractors in San Luis Obispo county and Poul has been on the top of my list for many years now. Courteous, professional, timely and honest. I highly recommend Norholm Builders for your next project."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">April 1, 2016</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">BH</span>
+          <div><div class="font-semibold">bhealey29</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"Poul Norholm Const. was very detailed and precise and great to work with — organizing and selecting our products to match the design for his client's needs."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">July 20, 2015</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">BC</span>
+          <div><div class="font-semibold">Bill Cockshott</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"Poul is a talented craftsman who pays attention to the smallest detail and keeps in mind the needs of his clients — builder of some of the finest homes on the Central California Coast."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">Century 21 Hometown Realtor · July 8, 2015</div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="rev-av">CM</span>
+          <div><div class="font-semibold">Cory Moore</div><div class="text-primary text-sm">★★★★★</div></div>
+        </div>
+        <p class="text-sm leading-[1.6] italic">"Poul was very professional and on time. He explained the process and made several suggestions that ended up saving us time and money. I would recommend Norholm Builders for projects big and small."</p>
+        <div class="text-xs text-[#9aa6b2] mt-auto pt-2">July 7, 2015</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Referrals ===== -->
+<section>
+  <div class="container mx-auto px-4 md:px-0 my-12 lg:my-20">
+    <div
+      class="rounded-2xl border border-[rgba(232,184,42,0.35)] bg-[#14181d] p-8 lg:p-14 text-center"
+    >
+      <div
+        class="text-primary text-xs lg:text-sm font-bold uppercase tracking-[3px] mb-4"
+      >
+        Referrals
+      </div>
+      <div class="text-2xl lg:text-4xl font-semibold mb-4">
+        Know a contractor who'd love this?
+      </div>
+      <p class="text-base lg:text-lg leading-[1.6] max-w-2xl mx-auto mb-8">
+        Refer a contractor and you both get
+        <span class="text-primary font-bold">one month free</span>. The more
+        crews on See Job Run, the easier every job runs.
+      </p>
+      <button pButton class="primary-btn" (click)="showDemoDialog()">
+        <span pButtonLabel>Refer a Contractor</span>
+        <div class="btn-icon"><i class="pi pi-arrow-right"></i></div>
+      </button>
     </div>
   </div>
 </section>
