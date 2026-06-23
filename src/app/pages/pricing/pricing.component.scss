@@ -123,6 +123,12 @@
       background-size: contain; background-repeat: no-repeat;
     }
 
+    &.plan-bidpro {
+      color: #e8b82a;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
     &.disabled {
       color: #5f6772;
       &::before {
