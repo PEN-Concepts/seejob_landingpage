@@ -10,26 +10,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command_timeout: 30m
-          script: |
-            set -e
-            cd /home/ubuntu/code/seejobweb
-            git fetch origin main
-            git reset --hard origin/main
-            npm install --legacy-peer-deps
-            npm run build
-            # SAFETY: only publish if the build actually produced output.
-            # Prevents rsync --delete from wiping the live site on a failed build.
-            if [ -f dist/seejobrun-web/browser/index.html ]; then
-              rsync -av --delete dist/seejobrun-web/browser/ /var/www/html/seejobmain/seejobrun-web/browser/
-              echo "Published successfully."
-            else
-              echo "ERROR: build produced no dist/seejobrun-web/browser/index.html — skipping publish to protect the live site."
-              exit 1
-            fi
+          node-version: 20
+
+      # Build on the runner (plenty of memory) instead of on the small EC2,
+      # which runs out of memory during prerendering.
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build (prerendered static site)
+        run: npm run build
+
+      # SAFETY: abort before touching the live server if the build is empty.
+      - name: Verify build output
+        run: |
+          test -f dist/seejobrun-web/browser/index.html
+          echo "Build OK. Prerendered files:"
+          find dist/seejobrun-web/browser -name index.html | sort
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      # Only reached if the build succeeded above (any prior step failing stops the job),
+      # so rsync --delete can never wipe the live site against an empty build.
+      - name: Deploy to EC2 via rsync
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=accept-new" \
+            dist/seejobrun-web/browser/ \
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/seejobmain/seejobrun-web/browser/"
