@@ -17,10 +17,7 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { ContactFormComponent } from '../../shared/contact-form/contact-form.component';
-import { JsonLdComponent } from '../../shared/json-ld/json-ld.component';
-import { RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { FAQ_SCHEMA } from '../../shared/seo-schemas';
 
 @Component({
   selector: 'app-home',
@@ -34,16 +31,13 @@ import { FAQ_SCHEMA } from '../../shared/seo-schemas';
     ReactiveFormsModule,
     MessageModule,
     ToastModule,
-    ContactFormComponent,
-    JsonLdComponent,
-    RouterLink
+    ContactFormComponent
   ],
   providers: [MessageService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  readonly faqSchema = FAQ_SCHEMA;
   demoDialogVisible: boolean = false;
   contactForm: FormGroup;   
   private apiUrl =  environment.apiUrl + '/demo_request';
