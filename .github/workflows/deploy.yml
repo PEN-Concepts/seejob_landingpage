@@ -18,9 +18,18 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           command_timeout: 30m
           script: |
+            set -e
             cd /home/ubuntu/code/seejobweb
             git fetch origin main
             git reset --hard origin/main
-            npm install
+            npm install --legacy-peer-deps
             npm run build
-            rsync -av --delete dist/seejobrun-web/browser/ /var/www/html/seejobmain/seejobrun-web/browser/
+            # SAFETY: only publish if the build actually produced output.
+            # Prevents rsync --delete from wiping the live site on a failed build.
+            if [ -f dist/seejobrun-web/browser/index.html ]; then
+              rsync -av --delete dist/seejobrun-web/browser/ /var/www/html/seejobmain/seejobrun-web/browser/
+              echo "Published successfully."
+            else
+              echo "ERROR: build produced no dist/seejobrun-web/browser/index.html — skipping publish to protect the live site."
+              exit 1
+            fi
