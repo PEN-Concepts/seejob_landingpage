@@ -20,7 +20,7 @@
 .plan-card {
   position: relative;
   background: #14181d;
-  border: 1px solid rgba(232, 184, 42, 0.18);
+  border: 1px solid rgba(253,184,19, 0.18);
   border-radius: 14px;
   padding: 32px 24px;
   display: flex;
@@ -29,22 +29,22 @@
 
   &:hover {
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
-    border-color: rgba(232, 184, 42, 0.55);
+    border-color: rgba(253,184,19, 0.55);
     transform: translateY(-3px);
   }
 
   // ── Popular variant (Gold) ──
   &--popular {
-    border-color: #e8b82a;
-    box-shadow: 0 0 0 1px rgba(232, 184, 42, 0.25), 0 14px 40px rgba(232, 184, 42, 0.12);
-    &:hover { border-color: #e8b82a; box-shadow: 0 0 0 1px rgba(232,184,42,0.4), 0 16px 46px rgba(232,184,42,0.2); }
+    border-color: #fdb813;
+    box-shadow: 0 0 0 1px rgba(253,184,19, 0.25), 0 14px 40px rgba(253,184,19, 0.12);
+    &:hover { border-color: #fdb813; box-shadow: 0 0 0 1px rgba(253,184,19,0.4), 0 16px 46px rgba(253,184,19,0.2); }
   }
 
   // ── Highlight variant (Platinum) ──
   &--highlight {
-    border-color: #d62828;
-    box-shadow: 0 0 0 1px rgba(214, 40, 40, 0.25), 0 14px 40px rgba(214, 40, 40, 0.1);
-    &:hover { border-color: #d62828; box-shadow: 0 0 0 1px rgba(214,40,40,0.4), 0 16px 46px rgba(214,40,40,0.18); }
+    border-color: #c42034;
+    box-shadow: 0 0 0 1px rgba(196,32,52, 0.25), 0 14px 40px rgba(196,32,52, 0.1);
+    &:hover { border-color: #c42034; box-shadow: 0 0 0 1px rgba(196,32,52,0.4), 0 16px 46px rgba(196,32,52,0.18); }
   }
 }
 
@@ -62,25 +62,25 @@
   white-space: nowrap;
   border-radius: 999px;
   color: #14181d;
-  background: #e8b82a;
-  box-shadow: 0 4px 14px rgba(232, 184, 42, 0.35);
+  background: #fdb813;
+  box-shadow: 0 4px 14px rgba(253,184,19, 0.35);
 
   &--blue {
     color: #ffffff;
-    background: #d62828;
-    box-shadow: 0 4px 14px rgba(214, 40, 40, 0.35);
+    background: #c42034;
+    box-shadow: 0 4px 14px rgba(196,32,52, 0.35);
   }
 }
 
 // ─── Plan Header ─────────────────────────────────────────────
 .plan-header { min-height: 48px; margin-bottom: 20px; }
 .plan-name { font-size: 22px; font-weight: 800; color: #f1e9cf; margin: 0; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.5px; }
-.plan-subtitle { font-size: 13px; color: #9aa6b2; margin: 4px 0 0; font-weight: 500; }
+.plan-subtitle { font-size: 13px; color: #9a9da0; margin: 4px 0 0; font-weight: 500; }
 
 // ─── Price Section ───────────────────────────────────────────
 .plan-price-section { display: flex; align-items: baseline; gap: 2px; margin-bottom: 24px; }
-.plan-price { font-size: 42px; font-weight: 800; color: #e8b82a; line-height: 1; letter-spacing: -1px; }
-.plan-price-period { font-size: 15px; font-weight: 500; color: #9aa6b2; }
+.plan-price { font-size: 42px; font-weight: 800; color: #fdb813; line-height: 1; letter-spacing: -1px; }
+.plan-price-period { font-size: 15px; font-weight: 500; color: #9a9da0; }
 
 // ─── Actions ─────────────────────────────────────────────────
 .plan-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
@@ -91,21 +91,21 @@
   text-decoration: none; cursor: pointer; transition: all 0.2s ease; text-align: center; box-sizing: border-box;
 
   &--primary {
-    background: #e8b82a; color: #14181d; border: 1px solid #e8b82a;
-    &:hover { filter: brightness(1.08); box-shadow: 0 6px 18px rgba(232, 184, 42, 0.3); }
+    background: #fdb813; color: #14181d; border: 1px solid #fdb813;
+    &:hover { filter: brightness(1.08); box-shadow: 0 6px 18px rgba(253,184,19, 0.3); }
   }
   &--outline {
-    background: transparent; color: #e8b82a; border: 1px solid rgba(232, 184, 42, 0.6);
-    &:hover { background: rgba(232, 184, 42, 0.1); }
+    background: transparent; color: #fdb813; border: 1px solid rgba(253,184,19, 0.6);
+    &:hover { background: rgba(253,184,19, 0.1); }
   }
   &--gold {
-    background: #d62828; color: #ffffff; border: 1px solid #d62828; font-weight: 800;
-    &:hover { filter: brightness(1.08); box-shadow: 0 6px 18px rgba(214, 40, 40, 0.35); }
+    background: #c42034; color: #ffffff; border: 1px solid #c42034; font-weight: 800;
+    &:hover { filter: brightness(1.08); box-shadow: 0 6px 18px rgba(196,32,52, 0.35); }
   }
 }
 
 // ─── Features Divider ────────────────────────────────────────
-.plan-features-divider { height: 1px; background: rgba(232, 184, 42, 0.18); margin-bottom: 20px; }
+.plan-features-divider { height: 1px; background: rgba(253,184,19, 0.18); margin-bottom: 20px; }
 
 // ─── Features List ───────────────────────────────────────────
 .plan-features {
@@ -124,7 +124,7 @@
     }
 
     &.plan-bidpro {
-      color: #e8b82a;
+      color: #fdb813;
       font-weight: 700;
       margin-top: 8px;
     }

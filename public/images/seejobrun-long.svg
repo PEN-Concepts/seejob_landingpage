@@ -13,7 +13,7 @@
       .cls-13 { fill: url(#linear-gradient-5); }
       .cls-5 { stroke-width: 7px; }
       .cls-5, .cls-6, .cls-8 { stroke: #6d6e71; }
-      .cls-5, .cls-8 { fill: #d3a816; }
+      .cls-5, .cls-8 { fill: #fdb813; }
       .cls-6 { fill: #434345; }
       .cls-6, .cls-8 { stroke-width: 5px; }
       .cls-7 { fill: #188ece; }
@@ -21,7 +21,7 @@
       .cls-14 { fill: url(#linear-gradient-7); }
       .cls-15 { fill: url(#linear-gradient-6); }
       .cls-16 { fill: url(#linear-gradient); }
-      .cls-9 { fill: #7d0000; stroke-width: .75px; }
+      .cls-9 { fill: #9e1829; stroke-width: .75px; }
     </style>
     <linearGradient id="linear-gradient" x1="861.99" y1="-9414.86" x2="1306.42" y2="-9414.86" gradientTransform="translate(19.8346 -7484.3318) rotate(-.99) scale(1 -1)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1f77ba"/><stop offset=".26" stop-color="#237cbf"/><stop offset=".6" stop-color="#258bcc"/><stop offset=".98" stop-color="#2ca4dd"/><stop offset="1" stop-color="#2da7df"/></linearGradient>
     <linearGradient id="linear-gradient-2" x1="6770.81" y1="2703.63" x2="6779.89" y2="2703.63" gradientTransform="translate(-240723.2222 639368.196) rotate(-90.99) scale(93.5)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#15539b"/><stop offset=".46" stop-color="#0d589e"/><stop offset="1" stop-color="#0266a7"/></linearGradient>
