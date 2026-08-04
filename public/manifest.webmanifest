@@ -1,0 +1,17 @@
+{
+  "name": "SeeJobRun",
+  "short_name": "SeeJobRun",
+  "description": "Run your jobsite from your phone — jobs, tasks, scheduling, photos, and reports.",
+  "id": "/user-dashboard/m",
+  "start_url": "/user-dashboard/m",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0c0f",
+  "theme_color": "#0a0c0f",
+  "icons": [
+    { "src": "/app-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/app-icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/app-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

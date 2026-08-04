@@ -11,6 +11,37 @@
   <link rel="canonical" href="https://seejobrun.com/">
   <link rel="icon" type="image/png" href="/favicon.png">
 
+  <!-- PWA install: makes the marketing site installable so the homepage
+       "Install SeeJobRun" button can fire the real native prompt. The installed
+       app opens the SeeJobRun web app (see manifest start_url). -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a0c0f">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SeeJobRun">
+  <script>
+    // Capture the Android/Chrome install prompt as early as possible (it can fire
+    // before Angular boots) so the homepage button can trigger it on tap.
+    window.__sjrInstall = { event: null, installed: false };
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      window.__sjrInstall.event = e;
+      window.dispatchEvent(new Event('sjr-install-ready'));
+    });
+    window.addEventListener('appinstalled', function () {
+      window.__sjrInstall.event = null;
+      window.__sjrInstall.installed = true;
+      window.dispatchEvent(new Event('sjr-install-done'));
+    });
+    // Register the no-cache service worker (required for installability).
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+      });
+    }
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="See Job Run">

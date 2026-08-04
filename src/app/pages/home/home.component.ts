@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -42,10 +42,22 @@ import { FAQ_SCHEMA } from '../../shared/seo-schemas';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   readonly faqSchema = FAQ_SCHEMA;
   demoDialogVisible: boolean = false;
-  contactForm: FormGroup;   
+
+  // ── PWA install CTA (replaces the App Store / Google Play badges) ──────────
+  /** Where the web app lives — used by the "Use on desktop or tablet" link and
+   *  as the Android fallback if the native prompt isn't available. */
+  readonly appUrl = 'https://seejobrun.com/user-dashboard/';
+  /** Detected platform. 'unknown' (inconclusive) falls back to the iOS flow —
+   *  the safest option, since it never assumes an install capability exists. */
+  device: 'android' | 'ios' | 'desktop' | 'unknown' = 'desktop';
+  installReady = false;      // the Android/Chrome native prompt has been captured
+  installed = false;         // user already installed it this session
+  showIosPanel = false;      // the iPhone "Add to Home Screen" steps are open
+
+  contactForm: FormGroup;
   private apiUrl =  environment.apiUrl + '/demo_request';
   constructor(private fb: FormBuilder,
     private http: HttpClient,
@@ -66,6 +78,66 @@ export class HomeComponent {
     });
   }
   loading = false;
+
+  ngOnInit(): void {
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
+    this.device = this.detectDevice();
+
+    // Already running as an installed app? Then there's nothing to install.
+    const standalone =
+      (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) ||
+      (navigator as any).standalone === true;
+    const state = (window as any).__sjrInstall;
+    this.installed = standalone || !!(state && state.installed);
+    this.installReady = !!(state && state.event);
+
+    // The native prompt can arrive after this component loads.
+    window.addEventListener('sjr-install-ready', () => (this.installReady = true));
+    window.addEventListener('sjr-install-done', () => {
+      this.installed = true;
+      this.installReady = false;
+    });
+  }
+
+  /** Classify the visitor. iOS is checked before desktop so iPadOS (which now
+   *  reports as "Macintosh") is treated as iOS. Anything we can't place lands on
+   *  'unknown' → the iPhone-style instructions (safe: assumes no capability). */
+  private detectDevice(): 'android' | 'ios' | 'desktop' | 'unknown' {
+    const ua = navigator.userAgent || '';
+    if (/android/i.test(ua)) return 'android';
+    const isIOS =
+      /iphone|ipad|ipod/i.test(ua) ||
+      (/Macintosh/i.test(ua) && typeof document !== 'undefined' && 'ontouchend' in document);
+    if (isIOS) return 'ios';
+    // A clear desktop signal (and not a mobile UA) → no install button.
+    if (/(windows nt|macintosh|cros|x11|linux)/i.test(ua) && !/mobile/i.test(ua)) return 'desktop';
+    return 'unknown';
+  }
+
+  /** The iPhone flow (also the inconclusive-device fallback) shows manual steps. */
+  get useIosFlow(): boolean {
+    return this.device === 'ios' || this.device === 'unknown';
+  }
+
+  /** Android one-tap install via the captured beforeinstallprompt. If it isn't
+   *  available (heuristic not yet met / already installed), open the web app. */
+  installAndroid(): void {
+    const state = (window as any).__sjrInstall;
+    const evt = state && state.event;
+    if (evt && typeof evt.prompt === 'function') {
+      evt.prompt();
+      Promise.resolve(evt.userChoice).finally(() => {
+        state.event = null;
+        this.installReady = false;
+      });
+    } else {
+      window.open(this.appUrl, '_blank', 'noopener');
+    }
+  }
+
+  toggleIosPanel(): void {
+    this.showIosPanel = !this.showIosPanel;
+  }
 
   showDemoDialog() {
     this.demoDialogVisible = true;

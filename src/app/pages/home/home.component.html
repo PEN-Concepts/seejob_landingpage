@@ -18,15 +18,71 @@
         you always wanted to be.
       </div>
 
-      <div class="flex gap-2 lg:gap-4 mt-11">
-        <a href="#">
-          <img src="images/home/app-store.png" alt="App Store" />
+      <!-- Device-aware install CTA (replaces the App Store / Google Play badges) -->
+      <div class="sjr-cta mt-11">
+        <!-- Android: real one-tap native install -->
+        <button
+          *ngIf="device === 'android' && !installed"
+          type="button"
+          class="sjr-install-btn"
+          (click)="installAndroid()"
+        >
+          <i class="pi pi-download"></i> Install SeeJobRun
+        </button>
+
+        <!-- iPhone (and inconclusive-device fallback): opens the manual steps -->
+        <button
+          *ngIf="useIosFlow && !installed"
+          type="button"
+          class="sjr-install-btn"
+          [attr.aria-expanded]="showIosPanel"
+          (click)="toggleIosPanel()"
+        >
+          <i class="pi pi-plus-circle"></i> Add to Home Screen
+        </button>
+
+        <!-- Desktop: no install button — just a normal Get Started link -->
+        <a
+          *ngIf="device === 'desktop'"
+          [href]="appUrl + 'signup'"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sjr-install-btn"
+        >
+          Get Started <i class="pi pi-arrow-right"></i>
         </a>
-        <a href="#">
-          <img src="images/home/google-play.png" alt="Google Play"
-        /></a>
-        <a href="#">
-          <img src="images/home/web.png" alt="Web" />
+
+        <!-- Already installed on this device -->
+        <a
+          *ngIf="installed"
+          [href]="appUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sjr-install-btn"
+        >
+          <i class="pi pi-check"></i> Open SeeJobRun
+        </a>
+
+        <!-- iPhone "Add to Home Screen" instructions -->
+        <div *ngIf="useIosFlow && showIosPanel" class="sjr-ios-steps">
+          <div class="sjr-ios-steps__title">Add SeeJobRun to your Home Screen</div>
+          <ol>
+            <li><span class="sjr-step-n">1</span> Tap the <b>Share</b> icon <i class="pi pi-upload"></i> in Safari</li>
+            <li><span class="sjr-step-n">2</span> Tap <b>Add to Home Screen</b></li>
+            <li><span class="sjr-step-n">3</span> Tap <b>Add</b></li>
+          </ol>
+        </div>
+
+        <!-- Secondary link — mobile views only. NOT "Use on web" (that reads as
+             "use your phone browser", the experience we're steering away from). -->
+        <a
+          *ngIf="device !== 'desktop'"
+          [href]="appUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sjr-install-secondary"
+        >
+          Use on desktop or tablet
         </a>
       </div>
     </div>
