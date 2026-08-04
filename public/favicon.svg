@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SeeJobRun">
+  <!-- Brand favicon: Sunflower house on dark, with a Sunflower swoosh. Colors from the
+       brand ramp (--brand-gold #fdb813 / dark #14181d). SVG keeps it crisp at any size. -->
+  <rect width="64" height="64" rx="14" fill="#14181d"/>
+  <!-- Sunflower swoosh behind the house -->
+  <path d="M10 41 A23 23 0 0 0 54 33" fill="none" stroke="#fdb813" stroke-width="3.6" stroke-linecap="round" opacity="0.8"/>
+  <!-- House silhouette -->
+  <path d="M32 14 L50 30 L46 30 L46 48 L18 48 L18 30 L14 30 Z" fill="#fdb813"/>
+  <!-- Door cut-out -->
+  <rect x="28" y="35" width="8" height="13" rx="1.2" fill="#14181d"/>
+</svg>
