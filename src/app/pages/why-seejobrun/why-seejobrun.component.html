@@ -1,0 +1,126 @@
+<!-- WHY SEE JOB RUN / PRICING — static marketing page. No billing logic, no app
+     data. Competitor figures + feature flags live in content/why-seejobrun-content.ts. -->
+<div class="wsr">
+  <div class="wsr-wrap">
+
+    <!-- 1 · Hero -->
+    <section class="text-center wsr-hero">
+      <div class="wsr-eyebrow">{{ hero.eyebrow }}</div>
+      <h1 class="wsr-h1">{{ hero.headline }}</h1>
+      <p class="wsr-red">{{ hero.redSubline }}</p>
+      <p class="wsr-support">{{ hero.supporting }}</p>
+    </section>
+
+    <!-- 2 · Tier cards -->
+    <section class="wsr-tiers">
+      <div class="text-center">
+        <div class="wsr-eyebrow">{{ tiersHeader.eyebrow }}</div>
+        <h2 class="wsr-h2">{{ tiersHeader.headline }}</h2>
+        <p class="wsr-support">{{ tiersHeader.sub }}</p>
+      </div>
+      <div class="wsr-cards">
+        @for (t of tiers; track t.name) {
+          <div class="wsr-card" [class.wsr-card--popular]="t.badge">
+            @if (t.badge) { <div class="wsr-badge">{{ t.badge }}</div> }
+            <div class="wsr-card-name">{{ t.name }}</div>
+            <div class="wsr-card-users">{{ t.users }}</div>
+            <div class="wsr-card-price"><span class="wsr-amt">{{ t.price }}</span><span class="wsr-per">{{ t.per }}</span></div>
+            <a [href]="ctaBand.href" target="_blank" rel="noopener"
+               class="wsr-cta" [class.wsr-cta--fill]="t.badge">{{ t.cta }}</a>
+          </div>
+        }
+      </div>
+      <p class="wsr-note">{{ tiersNote }}</p>
+      <div class="wsr-chips">
+        @for (c of chips; track c) { <span class="wsr-chip">✓ {{ c }}</span> }
+      </div>
+    </section>
+
+    <!-- 3 · Win comparison table (scrolls horizontally on phones) -->
+    <section class="wsr-panel">
+      <div class="wsr-panel-head">
+        <h2>How we compare</h2>
+        <p>The same job-management power, without the enterprise price tag or the sales call.</p>
+      </div>
+      <div class="wsr-panel-body">
+        <div class="overflow-x-auto">
+          <table class="wsr-table">
+            <thead>
+              <tr>
+                <th class="wsr-th-label"></th>
+                @for (c of cols; track c.key) {
+                  <th class="wsr-th" [class.wsr-th--us]="c.highlight">
+                    <div class="wsr-col-name" [class.wsr-col-name--us]="c.highlight">{{ c.label }}</div>
+                  </th>
+                }
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="wsr-price-row">
+                <td class="wsr-row-label">{{ priceRowLabel }}</td>
+                @for (c of cols; track c.key) {
+                  <td class="wsr-cell wsr-cell--price" [class.wsr-cell--us]="c.highlight">
+                    <div class="wsr-price-mo">
+                      @if (c.price.estimate) { <span class="wsr-est">est.</span> } {{ c.price.monthly }}
+                    </div>
+                    <div class="wsr-price-yr">{{ c.price.annual }} · {{ c.price.term }}</div>
+                  </td>
+                }
+              </tr>
+              @for (row of winRows; track row.label) {
+                <tr>
+                  <td class="wsr-row-label">
+                    {{ row.label }}
+                    @if (isComingSoon(row)) { <span class="wsr-soon">Coming soon</span> }
+                  </td>
+                  @for (c of cols; track c.key) {
+                    <td class="wsr-cell" [class.wsr-cell--us]="c.highlight">
+                      @if (isCheck(row, c)) { <span class="wsr-check" aria-label="Yes">✓</span> }
+                      @else if (isBar(row, c)) { <span class="wsr-bar" aria-label="No"></span> }
+                      @else { <span class="wsr-partial">{{ cellOf(row, c) }}</span> }
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · "Apps you can cancel" callout -->
+    <section class="wsr-callout">
+      <p class="wsr-callout-lead">{{ callout.lead }}</p>
+      <p class="wsr-callout-punch">{{ callout.punch }}</p>
+    </section>
+
+    <!-- 5 · All-features section (dark header + four groups) -->
+    <section class="wsr-panel wsr-panel--dark">
+      <div class="wsr-panel-head">
+        <h2>{{ featuresHeader.title }}</h2>
+        <p>{{ featuresHeader.sub }}</p>
+      </div>
+      <div class="wsr-panel-body">
+        <div class="wsr-feat-grid">
+          @for (g of groups; track g.title) {
+            <div class="wsr-feat">
+              <h4 class="wsr-feat-title">{{ g.title }}</h4>
+              <ul>
+                @for (it of g.items; track it) { <li>{{ it }}</li> }
+              </ul>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · Closing CTA band -->
+    <section class="wsr-band">
+      <div class="wsr-band-line">{{ ctaBand.line }}</div>
+      <div class="wsr-band-sub">{{ ctaBand.sub }}</div>
+    </section>
+
+    <p class="wsr-footnote">{{ footnote }}</p>
+
+  </div>
+</div>

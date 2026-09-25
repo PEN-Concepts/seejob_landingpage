@@ -1,0 +1,126 @@
+:host { display: block; }
+
+/* Palette (from the approved mockups) */
+$cream:   #ece3cf;   /* page ground */
+$card:    #fffdf7;   /* tier cards / panel bodies */
+$ink:     #211c14;   /* headings / figures */
+$muted:   #6f6653;   /* supporting text */
+$gold:    #c99a22;   /* brand gold accents */
+$goldlt:  #f0e2b8;   /* highlighted SeeJobRun column */
+$dark:    #3a342c;   /* dark header bars / CTA band */
+$red:     #c42034;   /* subline + "no" bars */
+$green:   #2f7d3a;   /* checks / "yes" */
+$line:    rgba(58, 52, 44, 0.14);
+
+.wsr { background: $cream; color: $ink; }
+.wsr-wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.text-center { text-align: center; }
+.overflow-x-auto { overflow-x: auto; }
+
+.wsr-eyebrow { color: $gold; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.wsr-h1 { font-size: clamp(1.9rem, 4.4vw, 3rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.5px; margin: 6px 0 0; }
+.wsr-h2 { font-size: clamp(1.5rem, 3.2vw, 2.1rem); font-weight: 800; margin: 6px 0 0; }
+.wsr-red { color: $red; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 800; margin: 10px 0 0; }
+.wsr-support { color: $muted; max-width: 620px; margin: 14px auto 0; line-height: 1.5; }
+
+.wsr-hero { padding: 40px 0 8px; }
+.wsr-tiers { padding: 28px 0 8px; }
+
+/* ── Tier cards ── */
+.wsr-cards { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 24px; align-items: stretch; }
+@media (min-width: 768px) { .wsr-cards { grid-template-columns: repeat(3, 1fr); } }
+.wsr-card {
+  position: relative; background: $card; border: 1px solid $line; border-radius: 16px;
+  padding: 24px 22px; display: flex; flex-direction: column;
+}
+.wsr-card--popular { border: 2px solid $gold; }
+.wsr-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: $gold; color: $ink; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 3px 14px; border-radius: 999px; white-space: nowrap;
+}
+.wsr-card-name { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: $muted; }
+.wsr-card-users { font-size: 1.25rem; font-weight: 800; margin-top: 4px; }
+.wsr-card-price { margin-top: 14px; }
+.wsr-amt { font-size: 2.6rem; font-weight: 900; }
+.wsr-per { color: $muted; margin-left: 4px; }
+.wsr-cta {
+  display: block; text-align: center; margin-top: 18px; padding: 0.7rem 1rem; border-radius: 10px;
+  font-weight: 800; border: 1px solid $gold; color: $ink; background: transparent; transition: filter .12s, background .12s;
+}
+.wsr-cta:hover { background: rgba(201, 154, 34, 0.1); }
+.wsr-cta--fill { background: $gold; color: $ink; }
+.wsr-cta--fill:hover { filter: brightness(0.95); background: $gold; }
+
+.wsr-note { color: $muted; text-align: center; margin-top: 20px; }
+.wsr-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 16px; }
+.wsr-chip {
+  background: $card; border: 1px solid $line; color: $muted; border-radius: 999px;
+  padding: 6px 14px; font-size: 0.82rem; font-weight: 600;
+}
+.wsr-chip { color: $green; }
+
+/* ── Panels (How we compare / features) — dark header bar + cream body ── */
+.wsr-panel { margin-top: 40px; border: 1px solid $line; border-radius: 16px; overflow: hidden; background: $card; }
+.wsr-panel-head { background: $dark; color: #f4ead0; text-align: center; padding: 18px 16px; }
+.wsr-panel-head h2 { color: $gold; font-size: 1.35rem; font-weight: 800; }
+.wsr-panel-head p { color: rgba(244, 234, 208, 0.75); font-size: 0.9rem; margin-top: 4px; }
+.wsr-panel-body { padding: 6px 10px 14px; }
+
+/* ── Comparison table ── */
+.wsr-table { width: 100%; min-width: 760px; border-collapse: collapse; }
+.wsr-table th, .wsr-table td { padding: 0.85rem 0.9rem; }
+.wsr-th-label { width: 13rem; }
+.wsr-th { text-align: center; vertical-align: middle; }
+.wsr-col-name { font-weight: 700; color: $muted; }
+.wsr-col-name--us { color: $gold; font-weight: 800; }
+.wsr-th--us, .wsr-cell--us { background: $goldlt; }
+/* Column "box" around the highlighted SeeJobRun column */
+.wsr-th--us { border-top: 2px solid $gold; border-left: 2px solid $gold; border-right: 2px solid $gold; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+.wsr-cell--us { border-left: 2px solid $gold; border-right: 2px solid $gold; }
+tr:last-child .wsr-cell--us { border-bottom: 2px solid $gold; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+
+.wsr-row-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: $ink; white-space: nowrap; border-top: 1px solid $line; }
+.wsr-cell { text-align: center; border-top: 1px solid $line; }
+.wsr-price-row .wsr-row-label, .wsr-price-row .wsr-cell { border-top: none; }
+.wsr-price-mo { font-weight: 800; }
+.wsr-cell--us .wsr-price-mo { color: $green; }
+.wsr-price-yr { font-size: 0.7rem; color: $muted; margin-top: 2px; }
+.wsr-est { color: $muted; font-weight: 700; font-size: 0.72rem; }
+
+.wsr-check { color: $green; font-weight: 900; font-size: 1.05rem; }
+.wsr-bar { display: inline-block; width: 22px; height: 5px; border-radius: 3px; background: $red; opacity: 0.85; }
+.wsr-partial { font-size: 0.8rem; color: $muted; }
+.wsr-soon {
+  display: inline-block; margin-left: 8px; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.04em;
+  color: $ink; background: $gold; padding: 1px 6px; border-radius: 999px; vertical-align: middle;
+}
+
+/* ── Callout ── */
+.wsr-callout {
+  margin: 26px auto 0; max-width: 900px; background: #fbf3dc; border: 1px solid $gold;
+  border-left: 4px solid $gold; border-radius: 12px; padding: 20px 24px;
+}
+.wsr-callout-lead { color: $ink; line-height: 1.5; }
+.wsr-callout-punch { color: $gold; font-weight: 800; font-size: 1.15rem; margin-top: 12px; }
+
+/* ── Features (dark panel) ── */
+.wsr-panel--dark .wsr-panel-body { background: $card; }
+.wsr-feat-grid { display: grid; grid-template-columns: 1fr; gap: 10px 24px; padding: 6px 8px; }
+@media (min-width: 640px) { .wsr-feat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .wsr-feat-grid { grid-template-columns: repeat(4, 1fr); } }
+.wsr-feat { padding: 8px 0; }
+.wsr-feat + .wsr-feat { }
+.wsr-feat-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: $gold; margin-bottom: 8px; }
+.wsr-feat ul { list-style: none; padding: 0; margin: 0; }
+.wsr-feat li { padding: 4px 0 4px 20px; position: relative; color: $ink; }
+.wsr-feat li::before { content: '✓'; color: $green; font-weight: 800; position: absolute; left: 0; }
+
+/* ── CTA band ── */
+.wsr-band {
+  margin-top: 34px; background: $dark; border-radius: 16px; padding: 26px 20px; text-align: center;
+}
+.wsr-band-line { color: $gold; font-weight: 800; font-size: clamp(1.1rem, 2.4vw, 1.5rem); }
+.wsr-band-sub { color: rgba(244, 234, 208, 0.75); margin-top: 6px; }
+
+.wsr-footnote { color: $muted; opacity: 0.75; font-size: 0.72rem; text-align: center; margin: 18px auto 60px; max-width: 900px; }
