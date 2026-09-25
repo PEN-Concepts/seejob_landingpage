@@ -63,7 +63,10 @@
                     <div class="wsr-price-mo">
                       @if (c.price.estimate) { <span class="wsr-est">est.</span> } {{ c.price.monthly }}
                     </div>
-                    <div class="wsr-price-yr">{{ c.price.annual }} · {{ c.price.term }}</div>
+                    <div class="wsr-price-yr">
+                      @if (c.price.note) { {{ c.price.note }} }
+                      @else { {{ c.price.annual }} · {{ c.price.term }} }
+                    </div>
                   </td>
                 }
               </tr>

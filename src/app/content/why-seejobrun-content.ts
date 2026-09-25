@@ -1,10 +1,11 @@
 /* ─────────────────────────────────────────────────────────────────────────────
  * EDITABLE MARKETING CONTENT for the "Why See Job Run" / Pricing page.
  *
- * ⚠️  COMPETITOR FIGURES ARE PLACEHOLDERS — VERIFY BEFORE GO-LIVE.
- *     Procore and Buildertrend prices are ESTIMATES (estimate: true) and read as
- *     estimates on the page ("est."). Every competitor price/mark lives here so it
- *     can be corrected without touching the component. Never present an estimate as exact.
+ * ⚠️  Legal-safe competitor pricing. Procore & Buildertrend DON'T publish rates, so
+ *     they show a RELATIVE symbol ($$$ / $$$$) with "custom quote · not public" — no
+ *     dollar estimate. Contractor Foreman, JobTread, CompanyCam and DocuSign use their
+ *     real published prices. Every competitor price/mark lives here so it can be
+ *     corrected without touching the component; keep the footer disclaimer in sync.
  *
  * ⚠️  IN-BUILD FEATURES are hidden by default. The mockup shows "Client view control"
  *     and "Weekly client view", but they are NOT live yet, so per the content
@@ -52,16 +53,19 @@ export const TIER_CHIPS = [
 // Uniform price cell: monthly on top, "annual · term" beneath. estimate → "est." on
 // the monthly line. Column order matches the mockup: See Job Run, Procore,
 // Buildertrend, Contractor Foreman, JobTread.
-export interface PriceCell { monthly: string; annual: string; term: string; estimate?: boolean; }
+// `note` (when set) replaces the "annual · term" subtext — used for companies that
+// don't publish rates, where the price is a RELATIVE symbol ($–$$$$) not a figure.
+export interface PriceCell { monthly: string; annual?: string; term?: string; note?: string; estimate?: boolean; }
 export interface CompareCol { key: string; label: string; highlight?: boolean; price: PriceCell; }
 export const PRICE_ROW_LABEL = 'PRICE (3 USERS)';
 export const COMPARE_COLS: CompareCol[] = [
   { key: 'sjr',     label: 'SeeJobRun',          highlight: true,
     price: { monthly: '$69/mo',    annual: '$828/yr',    term: 'month-to-month' } },
+  // Procore & Buildertrend don't publish rates → relative symbol, no dollar estimate.
   { key: 'procore', label: 'Procore',
-    price: { monthly: '$375+/mo',  annual: '$4,500+/yr', term: 'annual contract', estimate: true } },
+    price: { monthly: '$$$$', note: 'custom quote · not public' } },
   { key: 'bt',      label: 'Buildertrend',
-    price: { monthly: '$199+/mo',  annual: '$2,388+/yr', term: 'annual contract', estimate: true } },
+    price: { monthly: '$$$',  note: 'custom quote · not public' } },
   { key: 'cf',      label: 'Contractor Foreman',
     price: { monthly: '$105/mo',   annual: '$1,264/yr',  term: 'billed annually' } },
   { key: 'jt',      label: 'JobTread',
@@ -118,6 +122,7 @@ export const CTA_BAND = {
 
 /** On-page footnote — estimates + verification disclaimer (content-review requirement). */
 export const FOOTNOTE =
-  'Prices for a 3-person team; Procore & Buildertrend quote privately (estimates). ' +
-  'CompanyCam = Crew plan (3 users); DocuSign Standard, per user — both billed annually. ' +
-  'Figures to be verified before publishing.';
+  '$–$$$$ = relative price where a company doesn\'t publish rates. ' +
+  'Prices as of Sept 2026 from public pricing pages; subject to change. ' +
+  'All trademarks belong to their owners; SeeJobRun is not affiliated with or endorsed by these companies. ' +
+  'Prices shown are for a 3-person team; CompanyCam = Crew plan (3 users) and DocuSign Standard (per user) are billed annually.';
