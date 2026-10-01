@@ -47,7 +47,7 @@ export const TIERS: Tier[] = [
 export const TIERS_NOTE =
   'More than 10? Just +$15/employee a month. Employees are your billable seats — subcontractors and clients connect free.';
 export const TIER_CHIPS = [
-  'All features included', 'Free subcontractor access', 'Free client portal', '60-day free trial', 'No setup fee',
+  'All features included', 'Free subcontractor access', 'Free client portal', '60-day free trial, no credit card', 'No setup fee',
 ];
 
 /* ── Win comparison table ─────────────────────────────────────────────────── */
@@ -115,7 +115,7 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
 
 /* ── Closing CTA band ─────────────────────────────────────────────────────── */
 export const CTA_BAND = {
-  line: 'Start your 60-day free trial — $69/mo, cancel anytime.',
+  line: 'Start your 60-day free trial — no credit card. Then $69/mo, cancel anytime.',
   sub: 'No quote to chase. No feature you pay extra to unlock. No pile of add-on apps to juggle.',
   button: 'Start 60-day free trial',
   href: 'https://seejobrun.com/user-dashboard/',

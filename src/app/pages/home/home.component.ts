@@ -20,7 +20,7 @@ import { ContactFormComponent } from '../../shared/contact-form/contact-form.com
 import { JsonLdComponent } from '../../shared/json-ld/json-ld.component';
 import { RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { FAQ_SCHEMA } from '../../shared/seo-schemas';
+import { FAQ_SCHEMA, HOME_SCHEMA } from '../../shared/seo-schemas';
 import { APP_REVIEWS, CLIENT_REVIEWS, CLIENT_REVIEWS_FIRST, FOUNDER, OAK_COAST_URL } from '../../content/testimonials';
 
 @Component({
@@ -45,6 +45,7 @@ import { APP_REVIEWS, CLIENT_REVIEWS, CLIENT_REVIEWS_FIRST, FOUNDER, OAK_COAST_U
 })
 export class HomeComponent implements OnInit {
   readonly faqSchema = FAQ_SCHEMA;
+  readonly homeSchema = HOME_SCHEMA;
   // Testimonials (content/testimonials.ts)
   readonly founder = FOUNDER;
   readonly appReviews = APP_REVIEWS;

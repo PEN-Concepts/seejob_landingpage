@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ShellComponent } from './shared/shell/shell.component';
+import { SeoService } from './shared/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,8 @@ import { ShellComponent } from './shared/shell/shell.component';
 })
 export class AppComponent {
   title = 'seejobrun-web';
+
+  constructor(seo: SeoService) {
+    seo.start();
+  }
 }

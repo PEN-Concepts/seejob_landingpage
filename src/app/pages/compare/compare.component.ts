@@ -15,14 +15,6 @@ export class CompareComponent {
   readonly faqSchema = COMPARE_FAQ_SCHEMA;
 
   constructor(title: Title, meta: Meta) {
-    title.setTitle(
-      'Best App for Small General Contractors (2026) — See Job Run vs. Spreadsheets & Enterprise Tools',
-    );
-    meta.updateTag({
-      name: 'description',
-      content:
-        'Looking for the best app for a small general contractor? Compare See Job Run to spreadsheets, group texts, and enterprise tools like Procore and Buildertrend — scheduling, tasks, photos, and subcontractor bidding in one app from $69/month, all features, English & Spanish.',
-    });
     meta.updateTag({
       name: 'keywords',
       content:

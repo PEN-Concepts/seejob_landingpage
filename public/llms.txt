@@ -1,32 +1,37 @@
 # See Job Run
 
-> See Job Run is construction management software for independent general contractors and small crews. It puts job scheduling, task assignments, time tracking, job-site photos, documents, subcontractor bid requests, and reports in one app that works on iPhone, iPad, Android, and desktop, in English and Spanish. Plans start at $69/month with every feature included.
-
-## What it does
-- **Jobs & scheduling**: organize every job, schedule crews, and track tasks from one place.
-- **Subcontractor bidding**: send one bid request, share plans, and invite multiple subcontractors per trade. Each sub fills out the bid form in the app, so the contractor can compare bids side by side, award by trade, and turn the winning bid into a subcontract.
-- **Time tracking**: log crew time against jobs.
-- **Photos & documents**: capture job-site photos and keep plans and documents with each job.
-- **Reports**: see job progress and production at a glance.
-- **English & Spanish**: every user picks their language; typed notes, tasks, and updates translate automatically.
+> See Job Run is construction management software for independent general contractors and small crews. Jobs, scheduling, tasks, time tracking, job-site photos, documents, budgets, invoices, change orders and e-signatures are in one app that works on iPhone, iPad, Android and the web, in English and Spanish. Plans start at $69/month with every feature included, and every plan starts with a 60-day free trial (no credit card).
 
 ## Who it's for
-Small and independent general contractors, remodelers, and custom-home builders who run their own crews and subcontractors and want one organized system instead of spreadsheets, group texts, and paper.
+Small and independent general contractors, remodelers and custom-home builders who run their own crews and subcontractors.
 
-## Pricing
-- Priced by team size; **every feature on every plan**.
-- **Starter $69/month** (1–3 employees) · **Team $99/month** (up to 5) · **Crew $129/month** (up to 10) · **+$15/month per employee over 10**.
-- Subcontractors and clients are always free.
-- **60-day free trial**.
-- No Apple/Google in-app-purchase markup.
+## What it does
+- **Jobs & leads**: track every lead and job, with its contacts, documents, photos and materials.
+- **Scheduling**: drag-and-drop job schedule, master calendar, appointments and daily logs.
+- **Tasks**: assign tasks to employees and subcontractors and see them get done.
+- **Time tracking**: crew time cards against jobs.
+- **Money records**: estimates, budgets (with Excel export), invoices and change orders. See Job Run records job payments; it does not process them.
+- **E-signatures**: send documents for signature and keep the signed copy with the job.
+- **Subcontractor bid requests**: send bid requests to subcontractors and collect their bids in the app.
+- **People**: employees, free subcontractor access, a free client portal, chat, push and email alerts.
+- **English & Spanish**: each person picks a language; typed notes, tasks and updates translate automatically.
 
-## How it compares
-Unlike enterprise builder platforms such as Procore or Buildertrend (built for large builders and priced accordingly), See Job Run is built for small and independent contractors — simpler and far less expensive — while still covering scheduling, tasks, time, photos, documents, and subcontractor bidding.
+## Pricing (USD, per month)
+- **Starter — $69**: 1–3 employees.
+- **Team — $99**: up to 5 employees.
+- **Crew — $129**: up to 10 employees.
+- **+$15 per employee** over 10.
+- Every feature on every plan. Subcontractors and clients are always free.
+- 60-day free trial, no credit card.
+
+## Platforms
+iPhone, iPad, Android and desktop web browsers. On a phone it installs from the browser to the home screen.
 
 ## Links
 - Home: https://seejobrun.com/
-- Best app for small general contractors (comparison): https://seejobrun.com/best-app-for-contractors
-- Pricing: https://seejobrun.com/pricing
-- Why See Job Run (sourced price comparison): https://seejobrun.com/why-seejobrun
-- About: https://seejobrun.com/about
-- Contact: https://seejobrun.com/contact
+- Pricing: https://seejobrun.com/pricing/
+- Why See Job Run (features and competitors' published prices, each with source and date checked): https://seejobrun.com/why-seejobrun/
+- Best app for small general contractors: https://seejobrun.com/best-app-for-contractors/
+- About: https://seejobrun.com/about/
+- Contact: https://seejobrun.com/contact/
+- Sign up: https://seejobrun.com/user-dashboard/signup
