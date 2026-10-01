@@ -124,6 +124,11 @@
     </section>
 
     <p class="wsr-footnote">{{ footnote }}</p>
+    <ul class="wsr-sources" aria-label="Price sources">
+      @for (s of sources; track s.vendor) {
+        <li><b>{{ s.vendor }}</b> — {{ s.claim }} · <a [href]="s.url" target="_blank" rel="noopener nofollow">source</a> · checked {{ s.checked }}</li>
+      }
+    </ul>
 
   </div>
 </div>

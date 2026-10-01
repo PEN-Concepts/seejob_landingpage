@@ -124,3 +124,6 @@ tr:last-child .wsr-cell--us { border-bottom: 2px solid $gold; border-bottom-left
 .wsr-band-sub { color: rgba(244, 234, 208, 0.75); margin-top: 6px; }
 
 .wsr-footnote { color: $muted; opacity: 0.75; font-size: 0.72rem; text-align: center; margin: 18px auto 60px; max-width: 900px; }
+
+.wsr-sources { list-style: none; padding: 0; margin: -40px auto 60px; max-width: 900px; color: $muted; opacity: 0.8; font-size: 0.72rem; text-align: center; line-height: 1.7; }
+.wsr-sources a { color: inherit; text-decoration: underline; }

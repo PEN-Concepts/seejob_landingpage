@@ -128,7 +128,7 @@
       general contractors and small crews.</strong> Schedule jobs, assign and
       track tasks, log time, capture job-site photos, send subcontractor bid
       requests, and run reports — all from one app, on iPhone, iPad, Android,
-      and desktop, in English and Spanish. Plans start at $29/month.
+      and desktop, in English and Spanish. Plans start at $69/month, with every feature included and a 60-day free trial.
     </div>
   </div>
 </section>
@@ -426,7 +426,7 @@
         <div
           class="text-primary text-base lg:text-3xl leading-[1.3] tracking-[-0.3px] text-center lg:text-left"
         >
-          Start with just $29 a month
+          Every feature, from $69 a month
         </div>
         <div
           class="text-sm lg:text-base mt-[52px] mb-[46px] leading-[1.5] tracking-[-0.16px]"
@@ -469,7 +469,7 @@
       <div class="w-full lg:w-1/2">
         <img
           src="images/screens/pic-cta.png"
-          alt="Start at $29 a month with See Job Run"
+          alt="See Job Run — every feature, from $69 a month"
           class="lg:mr-auto mt-12 lg:mt-0 rounded-2xl w-full shadow-2xl"
         />
       </div>
@@ -499,118 +499,65 @@
   </div>
 </section>
 
-<!-- ===== Testimonials ===== -->
+<!-- ===== Testimonials (CCP 2026-10-01, mockup approved) — text lives in content/testimonials.ts ===== -->
+<!-- Section 1: THE APP -->
 <section>
   <div class="container mx-auto px-4 md:px-0 my-12 lg:my-20">
-    <div class="text-center text-2xl lg:text-4xl font-semibold mb-3">
-      What people are saying
+    <div class="tm-eyebrow">THE APP</div>
+    <h2 class="tm-h">What contractors say about See Job Run</h2>
+
+    <div class="tm-founder">
+      <div class="tm-head">
+        <span class="tm-av tm-av--founder">{{ founder.initials }}</span>
+        <div class="min-w-0">
+          <div class="tm-name">{{ founder.name }}</div>
+          <div class="tm-meta">{{ founder.role }} — Owner, <a [href]="oakCoastUrl" target="_blank" rel="noopener" class="tm-link">{{ founder.company }}</a> · {{ founder.license }}</div>
+        </div>
+      </div>
+      <p class="tm-quote tm-quote--lg">"{{ founder.text }}"</p>
     </div>
-    <div class="text-center text-sm lg:text-base text-[#9a9da0] mb-10">
-      App Store reviews of See Job Run — and clients of the team behind it.
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+      <div class="tm-card" *ngFor="let r of appReviews">
+        <div class="tm-head">
+          <span class="tm-av">{{ r.initials }}</span>
+          <div class="min-w-0">
+            <div class="tm-name">{{ r.name }}</div>
+            <div class="tm-stars" aria-label="5 stars">★★★★★</div>
+          </div>
+          <span class="tm-badge">{{ r.source }} · {{ r.date }}</span>
+        </div>
+        <p class="tm-quote">"{{ r.text }}"</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- Section 2: BUILT BY A REAL GC -->
+<section>
+  <div class="container mx-auto px-4 md:px-0 my-12 lg:my-20">
+    <div class="tm-eyebrow">BUILT BY A REAL GC</div>
+    <h2 class="tm-h">What clients say about Poul &amp; <a [href]="oakCoastUrl" target="_blank" rel="noopener" class="tm-link">Oak Coast Construction</a></h2>
+    <div class="tm-sub">30+ years building on California's Central Coast</div>
+
+    <!-- All nine are in the HTML (crawlers read them); the extra six are only hidden until "Show all". -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">Bo</span>
-          <div><div class="font-semibold">Bobshmegal</div><div class="text-primary text-sm">★★★★★</div></div>
-          <span class="ml-auto text-[10px] uppercase tracking-wide text-[#9a9da0] border border-[rgba(253,184,19,0.3)] rounded px-2 py-1">App Store</span>
+      <div class="tm-card" *ngFor="let r of clientReviews; let i = index" [class.tm-hide]="!showAllReviews && i >= clientFirst" [attr.data-review]="i + 1">
+        <div class="tm-head">
+          <span class="tm-av">{{ r.initials }}</span>
+          <div class="min-w-0">
+            <div class="tm-name">{{ r.name }}</div>
+            <div class="tm-stars" aria-label="5 stars">★★★★★</div>
+          </div>
         </div>
-        <div class="font-semibold text-primary">Great app for contractors and project managers</div>
-        <p class="text-sm leading-[1.6] italic">"The app is laid out well, easy to navigate, and has lots of features that make running any project a breeze. Contractors and project managers are able to share tasks with the specific people needed, and clients are able to keep track of the job progress at any time. English and Spanish is a huge plus, allowing each user to select their preference and have everything translate seamlessly!"</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">September 27, 2023</div>
+        <p class="tm-quote">"{{ r.text }}"</p>
+        <div class="tm-date"><span *ngIf="r.role">{{ r.role }} · </span>{{ r.date }}</div>
       </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">Mi</span>
-          <div><div class="font-semibold">mickeylover28</div><div class="text-primary text-sm">★★★★★</div></div>
-          <span class="ml-auto text-[10px] uppercase tracking-wide text-[#9a9da0] border border-[rgba(253,184,19,0.3)] rounded px-2 py-1">App Store</span>
-        </div>
-        <div class="font-semibold text-primary">See Job Run gets it done!</div>
-        <p class="text-sm leading-[1.6] italic">"This app is a one-stop-shop for keeping your projects organized and on track. It is easy to use and is a great help for communicating with subs and anyone else who is involved with the job. Well worth the small fee because of the time and materials saved."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">September 27, 2023</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">KP</span>
-          <div><div class="font-semibold">Kim Phillips</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"Just finished a bedroom remodel with some extra touch ups around my house. Poul and his crew did a great job and were easy to work with. I highly recommend Oak Coast Construction, Inc."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">January 13, 2023</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">SM</span>
-          <div><div class="font-semibold">Steven Mamigonian</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"I have had many contractors over the years, but by far, none has compared to Poul Norholm and his company. The work he did was excellent, clean, and top-notch. I will recommend Norholm Builders to everyone. In fact, he is already planning the next job for me, and will do all of my future work. 5++ Stars!!!"</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">December 17, 2018</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">BJ</span>
-          <div><div class="font-semibold">Bryan Johnston</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"We live in a small house with 2 children under 3 and operate 2 separate businesses from home. Something had to be done and we decided to convert the garage to a combined office space."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">December 17, 2018</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">RW</span>
-          <div><div class="font-semibold">Richard Wenz</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"Poul is great to work with, honest, trustworthy and clean. :) I have worked for Poul for around 15 years and I have never been disappointed."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">April 25, 2018</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">TK</span>
-          <div><div class="font-semibold">Tom Kosta</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"Poul and his team did a fantastic job on our remodel. They completed the job on time and on budget. I am looking forward to the next project with them."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">April 25, 2018</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">BS</span>
-          <div><div class="font-semibold">Beau Sisemore</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"I've worked with many contractors in San Luis Obispo county and Poul has been on the top of my list for many years now. Courteous, professional, timely and honest. I highly recommend Norholm Builders for your next project."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">April 1, 2016</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">BH</span>
-          <div><div class="font-semibold">bhealey29</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"Poul Norholm Const. was very detailed and precise and great to work with — organizing and selecting our products to match the design for his client's needs."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">July 20, 2015</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">BC</span>
-          <div><div class="font-semibold">Bill Cockshott</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"Poul is a talented craftsman who pays attention to the smallest detail and keeps in mind the needs of his clients — builder of some of the finest homes on the Central California Coast."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">Century 21 Hometown Realtor · July 8, 2015</div>
-      </div>
-
-      <div class="bg-white rounded-2xl p-7 flex flex-col gap-3">
-        <div class="flex items-center gap-3">
-          <span class="rev-av">CM</span>
-          <div><div class="font-semibold">Cory Moore</div><div class="text-primary text-sm">★★★★★</div></div>
-        </div>
-        <p class="text-sm leading-[1.6] italic">"Poul was very professional and on time. He explained the process and made several suggestions that ended up saving us time and money. I would recommend Norholm Builders for projects big and small."</p>
-        <div class="text-xs text-[#9a9da0] mt-auto pt-2">July 7, 2015</div>
-      </div>
+    </div>
+    <div class="text-center mt-8" *ngIf="clientReviews.length > clientFirst">
+      <button type="button" class="tm-more" (click)="showAllReviews = !showAllReviews" [attr.aria-expanded]="showAllReviews" data-show-all>
+        {{ showAllReviews ? 'Show fewer' : 'Show all ' + clientReviews.length + ' reviews' }}
+      </button>
     </div>
   </div>
 </section>
@@ -665,7 +612,7 @@
 
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
         <h3 class="text-lg lg:text-xl font-semibold mb-2 text-primary">How much does See Job Run cost?</h3>
-        <p class="text-base leading-[1.6]">See Job Run plans start at $29/month, with a $19/month Bid Pro option for contractors who mainly send and sign subcontractor bids. There's a free trial to start, and subcontractors can receive and respond to bid requests at no cost.</p>
+        <p class="text-base leading-[1.6]">See Job Run is priced by team size, with every feature on every plan: Starter $69/month (1–3 employees), Team $99/month (up to 5), and Crew $129/month (up to 10), plus $15 a month for each employee over 10. Subcontractors and clients are always free, and every plan starts with a 60-day free trial.</p>
       </div>
 
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">

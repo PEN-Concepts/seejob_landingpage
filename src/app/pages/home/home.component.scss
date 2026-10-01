@@ -236,3 +236,27 @@
   font-weight: 600;
   letter-spacing: 0.01em;
 }
+
+/* ===== Testimonials (CCP 2026-10-01) — dark cards #16191e, gold stars #fdb813 ===== */
+.tm-eyebrow { text-align: center; color: #fdb813; font-size: .8rem; font-weight: 700; letter-spacing: 3px; margin-bottom: .6rem; }
+.tm-h { text-align: center; font-size: 1.6rem; line-height: 1.25; font-weight: 600; margin: 0 0 .5rem; }
+@media (min-width: 1024px) { .tm-h { font-size: 2.25rem; } }
+.tm-sub { text-align: center; color: #9a9da0; margin-bottom: 2.25rem; }
+.tm-h + .tm-founder, .tm-h + .grid { margin-top: 2rem; }
+.tm-link { color: #fdb813; text-decoration: underline; text-underline-offset: 3px; }
+.tm-card, .tm-founder { background: #16191e; border: 1px solid rgba(253,184,19,.22); border-radius: 16px; padding: 1.6rem; display: flex; flex-direction: column; gap: .8rem; }
+.tm-founder { border: 2px solid #c42034; max-width: 860px; margin-left: auto; margin-right: auto; }
+.tm-head { display: flex; align-items: center; gap: .75rem; }
+.tm-av { width: 46px; height: 46px; border-radius: 50%; background: rgba(253,184,19,.14); border: 1px solid rgba(253,184,19,.4); color: #fdb813; display: flex; align-items: center; justify-content: center; font-weight: 800; flex: 0 0 auto; font-size: .9rem; }
+.tm-av--founder { background: #c42034; border-color: #c42034; color: #fff; }
+.tm-name { font-weight: 600; }
+.tm-meta { font-size: .85rem; color: #9a9da0; }
+.tm-stars { color: #fdb813; font-size: .9rem; letter-spacing: 1px; }
+.tm-badge { margin-left: auto; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: #9a9da0; border: 1px solid rgba(253,184,19,.3); border-radius: 6px; padding: 4px 8px; white-space: nowrap; }
+.tm-quote { font-size: .9rem; line-height: 1.6; font-style: italic; margin: 0; }
+.tm-quote--lg { font-size: 1.05rem; }
+.tm-date { font-size: .75rem; color: #9a9da0; margin-top: auto; padding-top: .5rem; }
+.tm-hide { display: none; }
+.tm-more { background: transparent; color: #fdb813; border: 1px solid #fdb813; border-radius: 999px; padding: .6rem 1.4rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+.tm-more:hover { background: rgba(253,184,19,.1); }
+@media (max-width: 640px) { .tm-badge { white-space: normal; text-align: right; } }

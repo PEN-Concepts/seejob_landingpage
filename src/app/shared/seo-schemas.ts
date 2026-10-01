@@ -25,7 +25,7 @@ export const FAQ_SCHEMA = {
     ),
     QA(
       'How much does See Job Run cost?',
-      'See Job Run plans start at $29/month, with a $19/month Bid Pro option for contractors who mainly send and sign subcontractor bids. There is a free trial to start, and subcontractors can receive and respond to bid requests at no cost.',
+      'See Job Run is priced by team size, with every feature on every plan: Starter $69/month (1–3 employees), Team $99/month (up to 5), and Crew $129/month (up to 10), plus $15 a month for each employee over 10. Subcontractors and clients are always free, and every plan starts with a 60-day free trial.',
     ),
     QA(
       'How do I send a bid request to several subcontractors at once?',
@@ -57,7 +57,7 @@ export const COMPARE_FAQ_SCHEMA = {
   mainEntity: [
     QA(
       'What is the best app for a small general contractor?',
-      'The best app for a small general contractor is one that combines job scheduling, task tracking, time, photos, documents, and subcontractor bidding in a single tool that works on the phone and the desktop. See Job Run was built specifically for independent GCs and small crews, starting at $29/month, with English and Spanish built in.',
+      'The best app for a small general contractor is one that combines job scheduling, task tracking, time, photos, documents, and subcontractor bidding in a single tool that works on the phone and the desktop. See Job Run was built specifically for independent GCs and small crews, from $69/month with every feature included, with English and Spanish built in.',
     ),
     QA(
       'How is See Job Run different from Buildertrend, Procore, or CoConstruct?',
