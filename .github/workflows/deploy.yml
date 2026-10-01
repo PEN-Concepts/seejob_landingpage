@@ -33,6 +33,10 @@ jobs:
           echo "Build OK. Prerendered files:"
           find dist/seejobrun-web/browser -name index.html | sort
 
+      # Fails the deploy if the old company name or a retired price ships (CCP 2026-10-01).
+      - name: Content guard
+        run: node scripts/check-content.mjs
+
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh

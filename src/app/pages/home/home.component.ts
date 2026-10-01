@@ -21,6 +21,7 @@ import { JsonLdComponent } from '../../shared/json-ld/json-ld.component';
 import { RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { FAQ_SCHEMA } from '../../shared/seo-schemas';
+import { APP_REVIEWS, CLIENT_REVIEWS, CLIENT_REVIEWS_FIRST, FOUNDER, OAK_COAST_URL } from '../../content/testimonials';
 
 @Component({
   selector: 'app-home',
@@ -44,6 +45,13 @@ import { FAQ_SCHEMA } from '../../shared/seo-schemas';
 })
 export class HomeComponent implements OnInit {
   readonly faqSchema = FAQ_SCHEMA;
+  // Testimonials (content/testimonials.ts)
+  readonly founder = FOUNDER;
+  readonly appReviews = APP_REVIEWS;
+  readonly clientReviews = CLIENT_REVIEWS;
+  readonly clientFirst = CLIENT_REVIEWS_FIRST;
+  readonly oakCoastUrl = OAK_COAST_URL;
+  showAllReviews = false;
   demoDialogVisible: boolean = false;
 
   // ── PWA install CTA (replaces the App Store / Google Play badges) ──────────

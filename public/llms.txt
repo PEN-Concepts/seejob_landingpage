@@ -1,10 +1,10 @@
 # See Job Run
 
-> See Job Run is construction management software for independent general contractors and small crews. It puts job scheduling, task assignments, time tracking, job-site photos, documents, subcontractor bid requests, and reports in one app that works on iPhone, iPad, Android, and desktop, in English and Spanish. Plans start at $29/month.
+> See Job Run is construction management software for independent general contractors and small crews. It puts job scheduling, task assignments, time tracking, job-site photos, documents, subcontractor bid requests, and reports in one app that works on iPhone, iPad, Android, and desktop, in English and Spanish. Plans start at $69/month with every feature included.
 
 ## What it does
 - **Jobs & scheduling**: organize every job, schedule crews, and track tasks from one place.
-- **Subcontractor bidding (Bid Pro)**: send one bid request, share plans, and invite multiple subcontractors per trade. Each sub fills out the bid form in the app, so the contractor can compare bids side by side, award by trade, and turn the winning bid into a subcontract.
+- **Subcontractor bidding**: send one bid request, share plans, and invite multiple subcontractors per trade. Each sub fills out the bid form in the app, so the contractor can compare bids side by side, award by trade, and turn the winning bid into a subcontract.
 - **Time tracking**: log crew time against jobs.
 - **Photos & documents**: capture job-site photos and keep plans and documents with each job.
 - **Reports**: see job progress and production at a glance.
@@ -14,9 +14,10 @@
 Small and independent general contractors, remodelers, and custom-home builders who run their own crews and subcontractors and want one organized system instead of spreadsheets, group texts, and paper.
 
 ## Pricing
-- Plans start at **$29/month**.
-- **Bid Pro** is a **$19/month** option focused on sending and signing subcontractor bids.
-- Free trial available. Subcontractors can receive and respond to bid requests for free.
+- Priced by team size; **every feature on every plan**.
+- **Starter $69/month** (1–3 employees) · **Team $99/month** (up to 5) · **Crew $129/month** (up to 10) · **+$15/month per employee over 10**.
+- Subcontractors and clients are always free.
+- **60-day free trial**.
 - No Apple/Google in-app-purchase markup.
 
 ## How it compares
@@ -26,5 +27,6 @@ Unlike enterprise builder platforms such as Procore or Buildertrend (built for l
 - Home: https://seejobrun.com/
 - Best app for small general contractors (comparison): https://seejobrun.com/best-app-for-contractors
 - Pricing: https://seejobrun.com/pricing
+- Why See Job Run (sourced price comparison): https://seejobrun.com/why-seejobrun
 - About: https://seejobrun.com/about
 - Contact: https://seejobrun.com/contact

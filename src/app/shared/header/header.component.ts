@@ -36,6 +36,10 @@ export class HeaderComponent implements OnInit {
         routerLink: '/pricing',
       },
       {
+        label: 'Why See Job Run',
+        routerLink: '/why-seejobrun',
+      },
+      {
         label: 'Contact Us',
         routerLink: '/contact',
       },

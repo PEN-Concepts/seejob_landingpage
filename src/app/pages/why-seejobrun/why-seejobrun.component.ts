@@ -3,7 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import {
   HERO, TIERS_HEADER, TIERS, TIERS_NOTE, TIER_CHIPS,
   COMPARE_COLS, PRICE_ROW_LABEL, WIN_ROWS, CALLOUT,
-  FEATURES_HEADER, FEATURE_GROUPS, CTA_BAND, FOOTNOTE,
+  FEATURES_HEADER, FEATURE_GROUPS, CTA_BAND, FOOTNOTE, PRICE_SOURCES,
   SHOW_IN_BUILD, WinRow, CompareCol,
 } from '../../content/why-seejobrun-content';
 
@@ -27,6 +27,7 @@ export class WhySeeJobRunComponent {
   readonly groups = FEATURE_GROUPS;
   readonly ctaBand = CTA_BAND;
   readonly footnote = FOOTNOTE;
+  readonly sources = PRICE_SOURCES;
 
   constructor(title: Title, meta: Meta) {
     title.setTitle('Why See Job Run — More features, lower price, easier to use');

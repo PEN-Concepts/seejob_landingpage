@@ -3,174 +3,41 @@
     <div
       class="text-primary text-3xl lg:text-4xl leading-[1.3] tracking-[-0.4px] font-bold text-center pt-8 md:pt-[70px]"
     >
-      Our Subscription Plans
+      One simple price. Every feature.
     </div>
     <div
-      class="text-2xl lg:text-3xl leading-[1.4] tracking-[-0.3px] font-medium text-center mt-4 md:mt-[60px]"
+      class="text-lg lg:text-xl leading-[1.5] tracking-[-0.2px] text-center mt-4 md:mt-8 max-w-3xl mx-auto opacity-90"
     >
-      Choose a plan.
+      Priced by the size of your team — not by which features you're allowed to use.
+      Every feature is on every plan. Try it free for 60 days.
     </div>
     <div class="mt-8 md:mt-[60px] pb-10 lg:pb-[130px]">
-      <div class="pricing-grid">
-        <!-- Bid Pro Plan -->
-        <div class="plan-card">
+      <!-- Plans come from content/why-seejobrun-content.ts (TIERS) — the one place prices live. -->
+      <div class="pricing-grid pricing-grid--3">
+        <div class="plan-card" [class.plan-card--popular]="t.badge" *ngFor="let t of tiers">
+          <span class="plan-badge" *ngIf="t.badge">{{ t.badge }}</span>
           <div class="plan-header">
-            <h3 class="plan-name">Bid Pro</h3>
+            <h3 class="plan-name">{{ t.name }}</h3>
           </div>
           <div class="plan-price-section">
-            <div class="plan-price">$19</div>
+            <div class="plan-price">{{ t.price }}</div>
             <div class="plan-price-period">/month</div>
           </div>
+          <div class="plan-seats">{{ t.users }}</div>
           <div class="plan-actions">
-            <a href="https://seejobrun.com/user-dashboard/" target="_blank" class="plan-btn plan-btn--primary">Upgrade</a>
+            <a href="https://seejobrun.com/user-dashboard/signup" target="_blank" class="plan-btn plan-btn--primary">{{ t.cta }}</a>
           </div>
           <div class="plan-features-divider"></div>
           <ul class="plan-features">
-            <li>Send &amp; receive bid requests</li>
-            <li>Batch invite contractors to bid</li>
-            <li>Share job plans &amp; documents (PDF)</li>
-            <li>View / download / print shared plans</li>
-            <li>Send your written bid details &amp; comments</li>
-            <li>Save bid groups &amp; send revisions</li>
-            <li>Digital subcontract e-signature</li>
-            <li>Signed contracts saved to the job</li>
-          </ul>
-        </div>
-
-        <!-- Basic Plan -->
-        <div class="plan-card">
-          <div class="plan-header">
-            <h3 class="plan-name">Basic</h3>
-          </div>
-          <div class="plan-price-section">
-            <div class="plan-price">$29</div>
-            <div class="plan-price-period">/month</div>
-          </div>
-          <div class="plan-actions">
-            <a href="https://seejobrun.com/user-dashboard/" target="_blank" class="plan-btn plan-btn--primary">Upgrade</a>
-          </div>
-          <div class="plan-features-divider"></div>
-          <ul class="plan-features">
-            <li>Jobs</li>
-            <li>Contacts</li>
-            <li>My Daily Tasks</li>
-            <li class="disabled">Spartan Dashboard</li>
-            <li class="disabled">Master Calendar</li>
-            <li class="disabled">Task Manager</li>
-            <li class="disabled">Leads</li>
-            <li class="disabled">Appointments</li>
-            <li class="disabled">Change Orders</li>
-            <li class="disabled">Job Budget</li>
-            <li class="disabled">Job Photos</li>
-            <li class="disabled">Job Documents</li>
-            <li class="disabled">Job Materials</li>
-            <li class="disabled">Equipment Management</li>
-            <li class="plan-bidpro">Bid Pro (bidding &amp; e-sign) included</li>
-          </ul>
-        </div>
-
-        <!-- Bronze Plan -->
-        <div class="plan-card">
-          <div class="plan-header">
-            <h3 class="plan-name">Bronze</h3>
-          </div>
-          <div class="plan-price-section">
-            <div class="plan-price">$59</div>
-            <div class="plan-price-period">/month</div>
-          </div>
-          <div class="plan-actions">
-            <a href="https://seejobrun.com/user-dashboard/" target="_blank" class="plan-btn plan-btn--primary">Upgrade</a>
-          </div>
-          <div class="plan-features-divider"></div>
-          <ul class="plan-features">
-            <li>Jobs</li>
-            <li>Contacts</li>
-            <li>My Daily Tasks</li>
-            <li>Spartan Dashboard</li>
-            <li>Master Calendar</li>
-            <li>Task Manager</li>
-            <li class="disabled">Leads</li>
-            <li class="disabled">Appointments</li>
-            <li class="disabled">Change Orders</li>
-            <li class="disabled">Job Budget</li>
-            <li class="disabled">Job Photos</li>
-            <li class="disabled">Job Documents</li>
-            <li class="disabled">Job Materials</li>
-            <li class="disabled">Equipment Management</li>
-            <li class="plan-bidpro">Bid Pro (bidding &amp; e-sign) included</li>
-          </ul>
-        </div>
-
-        <!-- Silver Plan -->
-        <div class="plan-card">
-          <div class="plan-header">
-            <h3 class="plan-name">Silver</h3>
-          </div>
-          <div class="plan-price-section">
-            <div class="plan-price">$99</div>
-            <div class="plan-price-period">/month</div>
-          </div>
-          <div class="plan-actions">
-            <a href="https://seejobrun.com/user-dashboard/" target="_blank" class="plan-btn plan-btn--primary">Upgrade</a>
-          </div>
-          <div class="plan-features-divider"></div>
-          <ul class="plan-features">
-            <li>Jobs</li>
-            <li>Contacts</li>
-            <li>My Daily Tasks</li>
-            <li>Spartan Dashboard</li>
-            <li>Master Calendar</li>
-            <li>Task Manager</li>
-            <li>Leads</li>
-            <li>Appointments</li>
-            <li>Change Orders</li>
-            <li class="disabled">Job Budget</li>
-            <li class="disabled">Job Photos</li>
-            <li class="disabled">Job Documents</li>
-            <li class="disabled">Job Materials</li>
-            <li class="disabled">Equipment Management</li>
-            <li class="plan-bidpro">Bid Pro (bidding &amp; e-sign) included</li>
-          </ul>
-        </div>
-
-        <!-- Gold Plan -->
-        <div class="plan-card plan-card--popular">
-          <div class="plan-badge">Most Popular</div>
-          <div class="plan-header">
-            <h3 class="plan-name">Gold</h3>
-          </div>
-          <div class="plan-price-section">
-            <div class="plan-price">$199</div>
-            <div class="plan-price-period">/month</div>
-          </div>
-          <div class="plan-actions">
-            <a href="https://seejobrun.com/user-dashboard/" target="_blank" class="plan-btn plan-btn--gold">Upgrade</a>
-          </div>
-          <div class="plan-features-divider"></div>
-          <ul class="plan-features">
-            <li>Jobs</li>
-            <li>Contacts</li>
-            <li>My Daily Tasks</li>
-            <li>Spartan Dashboard</li>
-            <li>Master Calendar</li>
-            <li>Task Manager</li>
-            <li>Leads</li>
-            <li>Appointments</li>
-            <li>Change Orders</li>
-            <li>Job Budget</li>
-            <li>Job Photos</li>
-            <li>Job Documents</li>
-            <li>Job Materials</li>
-            <li>Equipment Management</li>
-            <li class="plan-bidpro">Bid Pro (bidding &amp; e-sign) included</li>
+            <li *ngFor="let c of chips">{{ c }}</li>
           </ul>
         </div>
       </div>
-      <div
-        class="text-lg lg:text-xl leading-[1.5] tracking-[-0.16px] text-center mt-8 md:mt-12 opacity-80"
-      >
-        Standard plans cover up to 99 employees. Need more? Custom plans are
-        available on request.
+      <div class="text-lg lg:text-xl leading-[1.5] tracking-[-0.16px] text-center mt-8 md:mt-12 opacity-80">
+        {{ note }}
+      </div>
+      <div class="text-center mt-6">
+        <a routerLink="/why-seejobrun" class="text-primary font-semibold underline underline-offset-4">See how See Job Run compares →</a>
       </div>
     </div>
   </div>

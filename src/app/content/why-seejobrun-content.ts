@@ -14,7 +14,8 @@
  *     with a "Coming soon" badge instead.
  * ──────────────────────────────────────────────────────────────────────────── */
 
-export const VERIFY_BEFORE_GO_LIVE = true;
+// Verified 2026-10-01 against each vendor's own pricing page — see PRICE_SOURCES.
+export const VERIFY_BEFORE_GO_LIVE = false;
 
 /** false → hidden (default) · 'coming-soon' → shown with a badge, never a live check · true → live (only once shipped) */
 export const SHOW_IN_BUILD: false | true | 'coming-soon' = false;
@@ -63,7 +64,7 @@ export const COMPARE_COLS: CompareCol[] = [
     price: { monthly: '$69/mo',    annual: '$828/yr',    term: 'month-to-month' } },
   // Procore & Buildertrend don't publish rates → relative symbol, no dollar estimate.
   { key: 'procore', label: 'Procore',
-    price: { monthly: '$$$$', note: 'custom quote · not public' } },
+    price: { monthly: 'Quote only', note: 'prices not published' } },
   { key: 'bt',      label: 'Buildertrend',
     price: { monthly: '$$$',  note: 'custom quote · not public' } },
   { key: 'cf',      label: 'Contractor Foreman',
@@ -82,7 +83,7 @@ export const WIN_ROWS: WinRow[] = [
   { label: 'WEEKLY CLIENT VIEW',  inBuild: true, cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'bar' } },
   { label: 'PROGRESS TRACKING',   cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'bar' } },
   { label: 'MONTH-TO-MONTH',      cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'check' } },
-  { label: 'FREE TRIAL',          cells: { sjr: '60 days', procore: 'bar', bt: 'bar', cf: '30 days', jt: '30-day money-back' } },
+  { label: 'FREE TRIAL',          cells: { sjr: '60 days', procore: 'bar', bt: 'bar', cf: '30 days', jt: 'bar' } },
   { label: 'TRANSPARENT PRICING', cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'check', jt: 'check' } },
   { label: 'FREE SUBS & CLIENTS', cells: { sjr: 'check', procore: 'check', bt: 'check', cf: 'bar', jt: 'check' } },
   { label: 'ALL FEATURES',        cells: { sjr: 'check', procore: 'Bundled', bt: 'Tiered', cf: 'Tiered', jt: 'check' } },
@@ -122,7 +123,16 @@ export const CTA_BAND = {
 
 /** On-page footnote — estimates + verification disclaimer (content-review requirement). */
 export const FOOTNOTE =
-  '$–$$$$ = relative price where a company doesn\'t publish rates. ' +
-  'Prices as of Sept 2026 from public pricing pages; subject to change. ' +
-  'All trademarks belong to their owners; SeeJobRun is not affiliated with or endorsed by these companies. ' +
-  'Prices shown are for a 3-person team; CompanyCam = Crew plan (3 users) and DocuSign Standard (per user) are billed annually.';
+  'Competitor prices are for a 3-person team, as published on each company\'s own pricing page, checked Oct 1, 2026; ' +
+  'subject to change. All trademarks belong to their owners; SeeJobRun is not affiliated with or endorsed by these companies.';
+
+/** Every competitor price on the page, with where it came from and when it was checked (CCP 2026-10-01 §B). */
+export interface PriceSource { vendor: string; claim: string; url: string; checked: string; }
+export const PRICE_SOURCES: PriceSource[] = [
+  { vendor: 'Procore',            claim: 'No published prices (quote only)',                         url: 'https://www.procore.com/pricing',                          checked: 'Oct 1, 2026' },
+  { vendor: 'Buildertrend',       claim: 'No published prices (custom quote)',                       url: 'https://buildertrend.com/pricing/',                        checked: 'Oct 1, 2026' },
+  { vendor: 'Contractor Foreman', claim: 'Standard, 3 users: $105/mo billed annually ($1,264/yr); 30-day free trial', url: 'https://www.contractorforeman.com/pricing', checked: 'Oct 1, 2026' },
+  { vendor: 'JobTread',           claim: '$199/mo billed monthly; no free trial (30-day money-back on monthly)', url: 'https://www.jobtread.com/pricing',       checked: 'Oct 1, 2026' },
+  { vendor: 'CompanyCam',         claim: 'Crew, 3 users: $129/mo billed annually',                    url: 'https://companycam.com/pricing',                           checked: 'Oct 1, 2026' },
+  { vendor: 'DocuSign',           claim: 'eSignature Standard: $30/user/mo billed annually',          url: 'https://ecom.docusign.com/plans-and-pricing/esignature',  checked: 'Oct 1, 2026' },
+];
