@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
 import {
   HERO, TIERS_HEADER, TIERS, TIERS_NOTE, TIER_CHIPS,
   COMPARE_COLS, PRICE_ROW_LABEL, WIN_ROWS, CALLOUT,
@@ -29,15 +28,6 @@ export class WhySeeJobRunComponent {
   readonly footnote = FOOTNOTE;
   readonly sources = PRICE_SOURCES;
 
-  constructor(title: Title, meta: Meta) {
-    title.setTitle('Why See Job Run — More features, lower price, easier to use');
-    meta.updateTag({
-      name: 'description',
-      content:
-        'See Job Run gives small general contractors more features for less: scheduling, ' +
-        'subcontractor bids, photos, quotes and crew in one app. Plans from $69/mo, 60-day free trial.',
-    });
-  }
 
   /** In-build rows hidden by default; shown (as "Coming soon") only when opted in. */
   get winRows(): WinRow[] {
