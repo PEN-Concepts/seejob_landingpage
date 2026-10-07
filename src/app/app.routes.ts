@@ -6,6 +6,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { LearnComponent } from './pages/learn/learn.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CompareComponent } from './pages/compare/compare.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { TermsComponent } from './pages/terms/terms.component';
 import { WhySeeJobRunComponent } from './pages/why-seejobrun/why-seejobrun.component';
 
 export const routes: Routes = [
@@ -20,4 +22,7 @@ export const routes: Routes = [
   // existing /pricing (current billing tiers) is untouched until the new plan model
   // ships; Poul can point /pricing here or link it in nav when ready.
   { path: 'why-seejobrun', component: WhySeeJobRunComponent },
+  // Privacy Policy + Terms of Service: texts approved by Poul 2026-10-07.
+  { path: 'privacy', component: PrivacyComponent },
+  { path: 'terms', component: TermsComponent },
 ];
