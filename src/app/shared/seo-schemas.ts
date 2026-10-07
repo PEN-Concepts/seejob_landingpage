@@ -17,7 +17,7 @@ export const FAQ_SCHEMA = {
   mainEntity: [
     QA(
       'What is See Job Run?',
-      'See Job Run is construction management software for independent general contractors and small crews. It puts job scheduling, task assignments, time tracking, job-site photos, documents, subcontractor bid requests, and reports in one app you can use on your phone, tablet, or computer.',
+      'See Job Run is construction management software for independent general contractors and small crews. It puts job scheduling, task assignments, time tracking, job-site photos, documents, chat, and daily production reports in one app you can use on your phone, tablet, or computer.',
     ),
     QA(
       'Who is See Job Run for?',
@@ -28,24 +28,20 @@ export const FAQ_SCHEMA = {
       'See Job Run is priced by team size, with every feature on every plan: Starter $69/month (1–3 employees), Team $99/month (up to 5), and Crew $129/month (up to 10), plus $15 a month for each employee over 10. Subcontractors and clients are always free, and every plan starts with a 60-day free trial, no credit card needed.',
     ),
     QA(
-      'How do I send a bid request to several subcontractors at once?',
-      'With See Job Run you create one bid request, share the same plan set, and invite multiple subcontractors per trade in a few taps. Each sub fills out your bid form right in the app, so you can compare bids side by side and award the job without chasing PDFs or emails.',
-    ),
-    QA(
       'Does See Job Run work in Spanish?',
-      'Yes. See Job Run runs in both English and Spanish, and each user picks their own language. Typed job notes, tasks, and updates translate automatically, so English- and Spanish-speaking crews stay on the same page.',
+      'Yes. See Job Run runs in both English and Spanish. Each user picks English or Spanish for the whole app.',
     ),
     QA(
       'What devices does See Job Run work on?',
-      'See Job Run works on iPhone, iPad, Android phones and tablets, and any desktop web browser. Your jobs, schedule, photos, and documents stay in sync across every device.',
+      'See Job Run works in the web browser on any phone, tablet or computer. Your jobs, schedule, photos and documents stay in sync across every device.',
     ),
     QA(
       'Can subcontractors use See Job Run for free?',
-      'Yes. Subcontractors can receive bid requests, view shared plans, submit a bid, and sign a subcontract for free. Sending your own bid requests and managing your jobs is part of the paid plans.',
+      'Yes. Subcontractors and clients you add to your jobs use See Job Run for free. Managing your own jobs is part of the paid plans.',
     ),
     QA(
       'How is See Job Run different from spreadsheets or group texts?',
-      'See Job Run keeps every job\'s schedule, tasks, photos, documents, and bids in one organized place instead of scattered across spreadsheets, texts, and email. Everyone on the job sees the latest plan, so nothing gets lost or double-handled.',
+      'See Job Run keeps every job\'s schedule, tasks, photos, and documents in one organized place instead of scattered across spreadsheets, texts, and email. Everyone on the job sees the latest plan, so nothing gets lost or double-handled.',
     ),
   ],
 };
@@ -57,19 +53,15 @@ export const COMPARE_FAQ_SCHEMA = {
   mainEntity: [
     QA(
       'What is the best app for a small general contractor?',
-      'The best app for a small general contractor combines job scheduling, task tracking, time, photos, documents, and subcontractor bidding in a single tool that works on the phone and the desktop. See Job Run was built specifically for independent GCs and small crews, from $69/month with every feature included, with English and Spanish built in.',
+      'The best app for a small general contractor combines job scheduling, task tracking, time, photos, documents, and crew chat in a single tool that works on the phone and the desktop. See Job Run was built specifically for independent GCs and small crews, from $69/month with every feature included, with English and Spanish built in.',
     ),
     QA(
       'How is See Job Run different from Buildertrend, Procore, or CoConstruct?',
-      'See Job Run is built for small and independent contractors, not large builders, so it\'s simpler and far less expensive than enterprise tools like Procore, Buildertrend, or CoConstruct. It focuses on the day-to-day a small GC actually needs — scheduling, tasks, time, photos, and sending subcontractor bids — without per-project pricing or long onboarding.',
+      'See Job Run is built for small and independent contractors, not large builders, so it\'s simpler and far less expensive than enterprise tools like Procore, Buildertrend, or CoConstruct. It focuses on the day-to-day a small GC actually needs — scheduling, tasks, time, photos, and chat — without per-project pricing or long onboarding.',
     ),
     QA(
       'Is See Job Run better than running my jobs on spreadsheets and texts?',
-      'Spreadsheets and group texts scatter your schedule, photos, and bids across different places where things get lost. See Job Run keeps every job in one organized place the whole crew can see, so the latest plan, tasks, and documents are always in one spot.',
-    ),
-    QA(
-      'Does See Job Run handle subcontractor bidding?',
-      'Yes. See Job Run lets a general contractor send one bid request, share plans, and invite multiple subcontractors per trade who each fill out the bid form in the app. The GC compares bids side by side, awards by trade, and moves the winning bid into a subcontract — all in one place.',
+      'Spreadsheets and group texts scatter your schedule, photos, and notes across different places where things get lost. See Job Run keeps every job in one organized place the whole crew can see, so the latest plan, tasks, and documents are always in one spot.',
     ),
   ],
 };
@@ -117,11 +109,11 @@ export const APP_SCHEMA = {
   '@id': SITE + '/#software',
   name: 'See Job Run',
   applicationCategory: 'BusinessApplication',
-  operatingSystem: 'iOS, Android, Web',
+  operatingSystem: 'Web',
   url: SITE + '/',
   description:
     'Construction management software for independent general contractors and small crews: jobs, scheduling, tasks, ' +
-    'time, photos, documents, budgets and e-signatures in one app, in English and Spanish.',
+    'time, photos, documents, budgets, invoices and change orders in one app, in English and Spanish.',
   inLanguage: ['en', 'es'],
   publisher: { '@id': SITE + '/#organization' },
   offers: OFFERS,
@@ -129,7 +121,7 @@ export const APP_SCHEMA = {
 
 export const VIDEO_SCHEMA = {
   '@type': 'VideoObject',
-  name: 'See Job Run — Run your entire life from one place',
+  name: 'See Job Run — Run every job from one place',
   description: 'A 30-second overview of See Job Run: jobs, tasks, scheduling, photos, documents, and reports for contractors, on every device, in English & Spanish.',
   thumbnailUrl: SITE + '/videos/promo-poster.png',
   contentUrl: SITE + '/videos/seejobrun-promo.mp4',

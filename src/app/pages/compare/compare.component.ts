@@ -18,7 +18,7 @@ export class CompareComponent {
     meta.updateTag({
       name: 'keywords',
       content:
-        'best app for general contractors, best construction app for small contractors, contractor bidding app, subcontractor bid software, See Job Run vs Buildertrend, See Job Run vs Procore, construction scheduling app',
+        'best app for general contractors, best construction app for small contractors, See Job Run vs Buildertrend, See Job Run vs Procore, construction scheduling app',
     });
   }
 }

@@ -49,6 +49,22 @@ for (const f of files(ROOT)) {
   else if (body.trim() !== 'google-site-verification: ' + GSC) fail(`${GSC} content changed: ${JSON.stringify(body.slice(0, 80))}`);
 }
 
+/* ── 1c. Honesty rules, applied per page below (CCP 2026-10-06 Part 3) ───── */
+const HONESTY = [
+  // No store app today — only the phone web app. The two real "App Store review" labels stay.
+  [/\b(iPhone|iPad|iOS|Android|Google Play)\b/, 'store-app / device claim (there is no iPhone or Android store app)'],
+  [/App Store(?! review)/, '"App Store" claim (only the "App Store review" testimonial label is allowed)'],
+  // DeepL auto-translate (Part C) is OFF in production.
+  [/auto-?translat|translates? automatically/i, 'auto-translate claim (DeepL is off in production)'],
+  [/\b(hundreds|thousands) of (contractors|users|general|crews|companies)|trusted by/i, 'user-count claim'],
+  [/99 employees|custom plans are available/i, 'old employee-count / custom-plan claim'],
+  [/refer a contractor|you both get one month free/i, 'referral offer (not offered)'],
+  [/bid requests?|subcontractor bid|award(s|ed)? by trade|into a subcontract/i, 'subcontractor bid requests (not live)'],
+  [/\be-?signatures\b|docusign/i, 'general e-signatures (only quotes and change orders can be e-signed)'],
+  [/\bGPS\b|location tracking|chat (&|and) calling/i, 'GPS / location tracking / calling (not live)'],
+  [/google,? outlook|sync with personal calendars/i, 'Google/Outlook calendar sync (switched off)'],
+];
+
 /* ── 2. Per-page SEO on every prerendered page ───────────────────────────── */
 const attr = (tag, name) => { const m = tag.match(new RegExp(name + '="([^"]*)"')); return m ? m[1] : null; };
 const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
@@ -88,6 +104,14 @@ for (const f of pages) {
         if (!t || !visible.includes(t.replace(/\s+/g, ' '))) fail(`${page}: FAQ schema text not visible on the page: ${String(t).slice(0, 80)}…`);
       }
     }
+  }
+  // Honesty guard (CCP 2026-10-06 Part 3): claims that are not true today must not come back.
+  // Checks visible text, <head> meta tags and JSON-LD. Lift a rule only when the thing is LIVE.
+  const lds = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]).join(' ');
+  const said = visible + ' ' + decode(metas.join(' ')) + ' ' + lds;
+  for (const [re, what] of HONESTY) {
+    const m = said.match(re);
+    if (m) fail(`${page}: ${what}: …${said.slice(Math.max(0, (m.index ?? 0) - 50), (m.index ?? 0) + 50)}…`);
   }
   console.log(`  ${page.padEnd(28)} ${String(title.length).padStart(2)}/${String(desc ? desc.length : 0).padStart(3)}  ${title}`);
 }

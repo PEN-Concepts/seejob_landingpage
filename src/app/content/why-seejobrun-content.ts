@@ -47,7 +47,7 @@ export const TIERS: Tier[] = [
 export const TIERS_NOTE =
   'More than 10? Just +$15/employee a month. Employees are your billable seats — subcontractors and clients connect free.';
 export const TIER_CHIPS = [
-  'All features included', 'Free subcontractor access', 'Free client portal', '60-day free trial, no credit card', 'No setup fee',
+  'All features included', 'Free subcontractor access', 'Free client access', '60-day free trial, no credit card', 'No setup fee',
 ];
 
 /* ── Win comparison table ─────────────────────────────────────────────────── */
@@ -78,7 +78,7 @@ export const COMPARE_COLS: CompareCol[] = [
 export type Mark = 'check' | 'bar' | string;
 export interface WinRow { label: string; cells: Record<string, Mark>; inBuild?: boolean; }
 export const WIN_ROWS: WinRow[] = [
-  { label: 'CHAT & CALLING',      cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'bar' } },
+  { label: 'IN-APP CHAT',         cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'bar' } },
   { label: 'CLIENT VIEW CONTROL', inBuild: true, cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'bar' } },
   { label: 'WEEKLY CLIENT VIEW',  inBuild: true, cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'bar' } },
   { label: 'PROGRESS TRACKING',   cells: { sjr: 'check', procore: 'bar', bt: 'bar', cf: 'bar', jt: 'bar' } },
@@ -92,12 +92,13 @@ export const WIN_ROWS: WinRow[] = [
 ];
 
 /* ── "Apps you can cancel" callout ────────────────────────────────────────── */
-// E-sign copy stays generic (no "no DocuSign account needed" claim).
+// DocuSign comparison + "e-signatures" removed 2026-10-06: only quotes and change orders can be
+// e-signed today (subcontract / contract e-sign is parked). Put back when general e-sign ships.
 export const CALLOUT = {
   lead:
     'Still running jobs on spreadsheets, group texts, and a truck full of paper — or paying for ' +
-    'CompanyCam ($129/mo) for photos and DocuSign ($30/user) just for signatures?',
-  punch: 'SeeJobRun replaces the whole juggling act — photos, e-signatures, and everything else — for $69/mo.',
+    'CompanyCam ($129/mo) just for photos?',
+  punch: 'SeeJobRun replaces the whole juggling act — photos, schedules, tasks, and everything else — for $69/mo.',
 };
 
 /* ── All-features section ("And it's all included — on every plan") ────────── */
@@ -107,10 +108,10 @@ export const FEATURES_HEADER = {
 };
 export interface FeatureGroup { title: string; items: string[] }
 export const FEATURE_GROUPS: FeatureGroup[] = [
-  { title: 'JOBS & MONEY', items: ['Leads & jobs', 'Contacts', 'Estimates & budgets', 'Budget export', 'Invoicing', 'Change orders', 'E-signatures', 'Reports'] },
-  { title: 'SCHEDULE & FIELD', items: ['Drag-drop schedule', 'Master calendar', 'Daily logs', 'Time tracking', 'Tasks', 'Stages & % done'] },
-  { title: 'DOCS & MEDIA', items: ['Documents', 'Full plan sets', 'Job photos', 'Materials'] },
-  { title: 'PEOPLE', items: ['Employees & team', 'Free subs & clients', 'Client portal', 'Mobile app', 'Chat & calling', 'Push & email alerts'] },
+  { title: 'JOBS & MONEY', items: ['Leads & jobs', 'Contacts', 'Estimates & budgets', 'Budget export', 'Invoicing', 'Change orders', 'E-sign quotes & change orders'] },
+  { title: 'SCHEDULE & FIELD', items: ['Drag-drop schedule', 'Master calendar', 'Daily production reports', 'Time tracking', 'Tasks', 'Stages & % done'] },
+  { title: 'DOCS & MEDIA', items: ['Documents', 'Plan PDFs', 'Job photos', 'Materials'] },
+  { title: 'PEOPLE', items: ['Employees & team', 'Free subs & clients', 'Client access', 'Works on any phone', 'In-app chat', 'Push & email alerts'] },
 ];
 
 /* ── Closing CTA band ─────────────────────────────────────────────────────── */
@@ -134,5 +135,4 @@ export const PRICE_SOURCES: PriceSource[] = [
   { vendor: 'Contractor Foreman', claim: 'Standard, 3 users: $105/mo billed annually ($1,264/yr); 30-day free trial', url: 'https://www.contractorforeman.com/pricing', checked: 'Oct 1, 2026' },
   { vendor: 'JobTread',           claim: '$199/mo billed monthly; no free trial (30-day money-back on monthly)', url: 'https://www.jobtread.com/pricing',       checked: 'Oct 1, 2026' },
   { vendor: 'CompanyCam',         claim: 'Crew, 3 users: $129/mo billed annually',                    url: 'https://companycam.com/pricing',                           checked: 'Oct 1, 2026' },
-  { vendor: 'DocuSign',           claim: 'eSignature Standard: $30/user/mo billed annually',          url: 'https://ecom.docusign.com/plans-and-pricing/esignature',  checked: 'Oct 1, 2026' },
 ];
