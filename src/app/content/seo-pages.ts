@@ -46,7 +46,7 @@ export const SEO_PAGES: PageSeo[] = [
   {
     path: '/features/',
     title: 'See Job Run Features — Jobs, Schedules, Tasks & Crew',
-    description: 'Jobs and leads, drag-and-drop scheduling, tasks, time cards, photos, documents, budgets and e-signatures — every feature on every plan.',
+    description: 'Jobs and leads, drag-and-drop scheduling, tasks, time tracking, photos, documents, budgets and chat — every feature on every plan.',
   },
   {
     path: '/learn/',

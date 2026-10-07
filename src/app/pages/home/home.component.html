@@ -88,8 +88,7 @@
 
       <!-- Platform + language row: small, muted, sits under the CTA -->
       <div class="sjr-platrow">
-        <span class="sjr-plat"><i class="pi pi-android"></i>Android</span>
-        <span class="sjr-plat"><i class="pi pi-apple"></i>iPhone</span>
+        <span class="sjr-plat"><i class="pi pi-mobile"></i>Works on any phone</span>
         <span class="sjr-plat"><i class="pi pi-globe"></i>Web</span>
         <span class="sjr-plat-div" aria-hidden="true"></span>
         <span class="sjr-plat-lang">English &amp; Español</span>
@@ -126,9 +125,9 @@
     >
       <strong>See Job Run is construction management software for independent
       general contractors and small crews.</strong> Schedule jobs, assign and
-      track tasks, log time, capture job-site photos, send subcontractor bid
-      requests, and run reports — all from one app, on iPhone, iPad, Android,
-      and desktop, in English and Spanish. Plans start at $69/month, with every feature included and a 60-day free trial, no credit card needed.
+      track tasks, log time, capture job-site photos, chat with your crew, and
+      keep daily production reports — all from one app, on any phone, tablet or
+      computer, in English and Spanish. Plans start at $69/month, with every feature included and a 60-day free trial, no credit card needed.
     </div>
   </div>
 </section>
@@ -182,8 +181,8 @@
           Job Safety & Reporting
         </div>
         <div class="text-sm lg:text-base">
-          Stay compliant and secure Capture safety checks, incidents & site
-          conditions with instant reporting tools.
+          Stay compliant and secure. Run safety meetings with sign-in, and log
+          safety checks, issues and incidents in your daily reports.
         </div>
       </div>
       <div
@@ -196,7 +195,7 @@
           Task Management
         </div>
         <div class="text-sm lg:text-base">
-          Keep every task on track Assign, update, and monitor job tasks in
+          Keep every task on track. Assign, update, and monitor job tasks in
           real-time with built-in team accountability.
         </div>
       </div>
@@ -405,8 +404,9 @@
         <div
           class="text-base lg:text-lg mt-6 leading-[1.5] tracking-[-0.16px] opacity-80"
         >
-          Standard plans cover up to 99 employees. Need more? Custom plans are
-          available on request.
+          Starter covers 1–3 employees, Team up to 5, Crew up to 10. More than
+          10? Just +$15 per employee a month. Subcontractors and clients are
+          always free.
         </div>
       </div>
       <div class="w-full lg:w-1/2 flex justify-end">
@@ -431,14 +431,14 @@
         <div
           class="text-sm lg:text-base mt-[52px] mb-[46px] leading-[1.5] tracking-[-0.16px]"
         >
-          The trusted job management tool built for growing teams and real-world
+          The job management tool built for growing teams and real-world
           workflows.
         </div>
 
         <ul class="seejobrun-list">
           <li>Unlimited contacts — no caps, ever</li>
           <li>Simple, intuitive, and easy to use</li>
-          <li>Seamless onboarding with setup support</li>
+          <li>Help getting set up — just ask</li>
           <li>Reliable customer service when you need it</li>
         </ul>
       </div>
@@ -475,24 +475,21 @@
       </div>
 
       <div class="w-full lg:w-1/2">
+        <!-- Poul's quote used to be repeated here ("everyday" version). It now appears once,
+             in the founder card below ("every day"), per CCP 2026-10-06 item 20. -->
         <div
           class="text-base lg:text-xl leading-[1.4] tracking-[-0.2px] font-medium"
         >
-          Find out how See Job Run helps Poul Norholm achieve more every day.
+          Every feature, on every plan. Try it free for 60 days — no credit card
+          needed.
         </div>
-
-        <div class="text-sm lg:text-lg leading-[1.5] font-medium mt-9">
-          " I wanted something I could use everyday with any job or lead I
-          worked on. This app is for all of us construction job managers who
-          supervise and manage projects with endless details."
-        </div>
-        <div
-          class="text-sm lg:text-lg leading-[1.5] font-semibold mt-5 lg:mt-12"
-        >
-          Poul Norholm
-        </div>
-        <div class="text-sm lg:text-lg leading-[1.5] font-medium">
-          Oak Coast Construction INC.
+        <div class="mt-9">
+          <a [href]="appUrl + 'signup'" target="_blank" rel="noopener noreferrer" pButton class="primary-btn">
+            <span pButtonLabel>START YOUR FREE TRIAL</span>
+            <div class="btn-icon">
+              <i class="pi pi-arrow-right"></i>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -562,32 +559,7 @@
   </div>
 </section>
 
-<!-- ===== Referrals ===== -->
-<section>
-  <div class="container mx-auto px-4 md:px-0 my-12 lg:my-20">
-    <div
-      class="rounded-2xl border border-[rgba(253,184,19,0.35)] bg-[#14181d] p-8 lg:p-14 text-center"
-    >
-      <div
-        class="text-primary text-xs lg:text-sm font-bold uppercase tracking-[3px] mb-4"
-      >
-        Referrals
-      </div>
-      <div class="text-2xl lg:text-4xl font-semibold mb-4">
-        Know a contractor who'd love this?
-      </div>
-      <p class="text-base lg:text-lg leading-[1.6] max-w-2xl mx-auto mb-8">
-        Refer a contractor and you both get
-        <span class="text-primary font-bold">one month free</span>. The more
-        crews on See Job Run, the easier every job runs.
-      </p>
-      <button pButton class="primary-btn" (click)="showDemoDialog()">
-        <span pButtonLabel>Refer a Contractor</span>
-        <div class="btn-icon"><i class="pi pi-arrow-right"></i></div>
-      </button>
-    </div>
-  </div>
-</section>
+<!-- Referrals section removed 2026-10-06 (Poul: no referral program for now). -->
 
 <!-- ===== FAQ (answer-engine friendly) ===== -->
 <section class="faq-section">
@@ -602,7 +574,7 @@
     <div class="max-w-3xl mx-auto flex flex-col gap-5">
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
         <h3 class="text-lg lg:text-xl font-semibold mb-2 text-primary">What is See Job Run?</h3>
-        <p class="text-base leading-[1.6]">See Job Run is construction management software for independent general contractors and small crews. It puts job scheduling, task assignments, time tracking, job-site photos, documents, subcontractor bid requests, and reports in one app you can use on your phone, tablet, or computer.</p>
+        <p class="text-base leading-[1.6]">See Job Run is construction management software for independent general contractors and small crews. It puts job scheduling, task assignments, time tracking, job-site photos, documents, chat, and daily production reports in one app you can use on your phone, tablet, or computer.</p>
       </div>
 
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
@@ -615,29 +587,29 @@
         <p class="text-base leading-[1.6]">See Job Run is priced by team size, with every feature on every plan: Starter $69/month (1–3 employees), Team $99/month (up to 5), and Crew $129/month (up to 10), plus $15 a month for each employee over 10. Subcontractors and clients are always free, and every plan starts with a 60-day free trial, no credit card needed.</p>
       </div>
 
-      <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
-        <h3 class="text-lg lg:text-xl font-semibold mb-2 text-primary">How do I send a bid request to several subcontractors at once?</h3>
-        <p class="text-base leading-[1.6]">With See Job Run you create one bid request, share the same plan set, and invite multiple subcontractors per trade in a few taps. Each sub fills out your bid form right in the app, so you can compare bids side by side and award the job without chasing PDFs or emails.</p>
-      </div>
+      <!-- "How do I send a bid request to several subcontractors at once?" removed 2026-10-06: Bid Requests is not live
+           (app route redirects to "coming soon"). Put it back here AND in seo-schemas.ts FAQ_SCHEMA when it ships. -->
 
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
         <h3 class="text-lg lg:text-xl font-semibold mb-2 text-primary">Does See Job Run work in Spanish?</h3>
-        <p class="text-base leading-[1.6]">Yes. See Job Run runs in both English and Spanish, and each user picks their own language. Typed job notes, tasks, and updates translate automatically, so English- and Spanish-speaking crews stay on the same page.</p>
+        <!-- Auto-translate claim removed 2026-10-06 while DeepL (Part C) is OFF in prod. When it goes live, put back:
+             "Typed job notes, tasks, and updates translate automatically, so English- and Spanish-speaking crews stay on the same page." (here AND in seo-schemas.ts FAQ_SCHEMA) -->
+        <p class="text-base leading-[1.6]">Yes. See Job Run runs in both English and Spanish. Each user picks English or Spanish for the whole app.</p>
       </div>
 
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
         <h3 class="text-lg lg:text-xl font-semibold mb-2 text-primary">What devices does See Job Run work on?</h3>
-        <p class="text-base leading-[1.6]">See Job Run works on iPhone, iPad, Android phones and tablets, and any desktop web browser. Your jobs, schedule, photos, and documents stay in sync across every device.</p>
+        <p class="text-base leading-[1.6]">See Job Run works in the web browser on any phone, tablet or computer. Your jobs, schedule, photos and documents stay in sync across every device.</p>
       </div>
 
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
         <h3 class="text-lg lg:text-xl font-semibold mb-2 text-primary">Can subcontractors use See Job Run for free?</h3>
-        <p class="text-base leading-[1.6]">Yes. Subcontractors can receive bid requests, view shared plans, submit a bid, and sign a subcontract for free. Sending your own bid requests and managing your jobs is part of the paid plans.</p>
+        <p class="text-base leading-[1.6]">Yes. Subcontractors and clients you add to your jobs use See Job Run for free. Managing your own jobs is part of the paid plans.</p>
       </div>
 
       <div class="faq-item rounded-2xl border border-[rgba(253,184,19,0.25)] bg-[#14181d] p-6 lg:p-8">
         <h3 class="text-lg lg:text-xl font-semibold mb-2 text-primary">How is See Job Run different from spreadsheets or group texts?</h3>
-        <p class="text-base leading-[1.6]">See Job Run keeps every job's schedule, tasks, photos, documents, and bids in one organized place instead of scattered across spreadsheets, texts, and email. Everyone on the job sees the latest plan, so nothing gets lost or double-handled. <a routerLink="/best-app-for-contractors" class="text-primary underline">See how See Job Run compares to other contractor apps →</a></p>
+        <p class="text-base leading-[1.6]">See Job Run keeps every job's schedule, tasks, photos, and documents in one organized place instead of scattered across spreadsheets, texts, and email. Everyone on the job sees the latest plan, so nothing gets lost or double-handled. <a routerLink="/best-app-for-contractors" class="text-primary underline">See how See Job Run compares to other contractor apps →</a></p>
       </div>
     </div>
   </div>
