@@ -53,6 +53,16 @@ export const SEO_PAGES: PageSeo[] = [
     title: 'Learn See Job Run — How It Works',
     description: 'How See Job Run handles jobs, scheduling, time, crews and every project from start to finish.',
   },
+  {
+    path: '/privacy/',
+    title: 'Privacy Policy | See Job Run',
+    description: 'What See Job Run collects, why, who helps us run it, how long we keep it, and your choices. We do not sell or share your personal information.',
+  },
+  {
+    path: '/terms/',
+    title: 'Terms of Service | See Job Run',
+    description: 'The agreement for using See Job Run: plans and billing, the free trial, cancelling, frozen accounts, your content and acceptable use.',
+  },
 ];
 
 /** The path as nginx serves it: '/' or '/name/'. */
