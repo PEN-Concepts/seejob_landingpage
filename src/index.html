@@ -2,6 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Google Analytics 4 (G-R1Y0C7BVKM). Page views are sent by AnalyticsService
+       (src/app/shared/analytics) with a SANITIZED path — no query strings, tokens,
+       codes or ids. send_page_view:false so GA never sends the raw URL itself, and
+       page_location starts as the bare site root until the router sets the clean one.
+       If GA is blocked (ad blocker / DNS filter) nothing breaks. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1Y0C7BVKM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R1Y0C7BVKM', {
+      send_page_view: false,
+      page_location: location.origin + '/',
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+  </script>
   <title>See Job Run — Construction Management Software for Contractors</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">

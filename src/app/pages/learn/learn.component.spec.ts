@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { provideRouter } from '@angular/router';
 import { LearnComponent } from './learn.component';
 
 describe('LearnComponent', () => {
@@ -8,7 +9,9 @@ describe('LearnComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LearnComponent]
+      imports: [LearnComponent],
+      // The demo button is a real routerLink now (it was inert without RouterLink).
+      providers: [provideRouter([])],
     })
     .compileComponents();
 
