@@ -20,6 +20,7 @@ import { ContactFormComponent } from '../../shared/contact-form/contact-form.com
 import { JsonLdComponent } from '../../shared/json-ld/json-ld.component';
 import { RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { AnalyticsService } from '../../shared/analytics/analytics.service';
 import { FAQ_SCHEMA, HOME_SCHEMA } from '../../shared/seo-schemas';
 import { APP_REVIEWS, CLIENT_REVIEWS, CLIENT_REVIEWS_FIRST, FOUNDER, OAK_COAST_URL } from '../../content/testimonials';
 
@@ -71,6 +72,7 @@ export class HomeComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private http: HttpClient,
     private messageService: MessageService,
+    private analytics: AnalyticsService,
   ) {this.contactForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -149,7 +151,16 @@ export class HomeComponent implements OnInit {
   }
 
   showDemoDialog() {
+    this.analytics.track('demo_click', { location: 'home' });
     this.demoDialogVisible = true;
+  }
+
+  /** "See it in action" promo video started (overlay button or native controls). Once per visit. */
+  private promoTracked = false;
+  onPromoPlay(): void {
+    if (this.promoTracked) return;
+    this.promoTracked = true;
+    this.analytics.track('demo_click', { location: 'home_video' });
   }
 
   hideDemoDialog() {

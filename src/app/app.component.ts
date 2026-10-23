@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ShellComponent } from './shared/shell/shell.component';
 import { SeoService } from './shared/seo.service';
+import { AnalyticsService } from './shared/analytics/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,9 @@ import { SeoService } from './shared/seo.service';
 export class AppComponent {
   title = 'seejobrun-web';
 
-  constructor(seo: SeoService) {
+  constructor(seo: SeoService, analytics: AnalyticsService) {
     seo.start();
+    // After SEO so each page_view carries the new page title. Browser-only, never throws.
+    analytics.start();
   }
 }
